@@ -11,9 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 // Route::get('/home', function () {
 //     return view('Home.Home');
@@ -24,4 +24,15 @@ Route::get('/', function () {
 // });
 
 Route::get('/', 'PageController@index');
+Route::get('admin', 'AdminController@index');
+Route::get('admin/viewblogs', 'AdminController@viewblogs');
+Route::get('admin/editblog/{id}', 'AdminController@editblog');
+Route::post('admin/editblog/{id}', 'AdminController@updatedraft');
+Route::post('admin/preview', 'AdminController@preview');
+Route::post('admin/draft', 'AdminController@draft');
+Route::post('admin/publish', 'AdminController@publish');
+Route::post('admin/delete', 'AdminController@delete');
 Route::resource('blogs','BlogController');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

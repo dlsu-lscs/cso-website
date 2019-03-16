@@ -1,0 +1,114 @@
+.blogscontainer{
+    max-width: 1200px;
+    margin: auto;
+}
+
+
+.featuredblog{
+    width: 100%;
+    height: 550px;
+    position: relative;   
+    cursor: pointer;
+    background-size: cover;
+}
+
+.featuredblog__cover{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0, 0.75);
+}
+
+.featuredblog__bottom{
+    position: absolute;
+    bottom: 0;
+    padding: 30px;
+}
+.featuredblog__kind{
+    color: var(--cso-gold);
+    font-size: 20px;
+    font-weight: bold;
+}
+.featuredblog__title{
+    color: var(--cso-white);
+    font-size: 32px;
+}
+.featuredblog__desc{
+    color: var(--color-font);
+    font-size: 18px;
+}
+.featuredblog__author{
+    color: var(--cso-white);
+}
+.featuredblog__small{
+    font-size: 12px;
+}
+
+.otherblogscontainer{
+    margin-top: 30px;
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+.minorblog{
+    margin-top: 15px;
+    width: 100%;
+    height: 200px;
+}
+
+.minorblog__img{
+    width: 200px;
+    height: 200px;
+    background-size: cover;
+}
+
+.minorblog__info{
+    width: 800px;
+    height: 100%;
+    padding:30px;
+}
+
+.minorblog__info__title{
+    color: var(--cso-gold);
+    font-weight: bold;
+    font-size: 27px;
+}
+
+.minorblog__info__small{
+    color: var(--color-font);
+    font-size: 12px;
+}
+
+.minorblog__info__desc{
+    color: var(--font-active);
+    font-size: 17px;
+}
+.minorblog__info__readcontainer{
+    margin-top: 10px;
+}
+.read-more{
+    width: 80px;
+    height: 25px;
+    background-color: var(--cso-green);
+    float: left;
+    border-radius: 35px;
+    line-height: 25px;
+    text-align: center;
+    font-size: 10px;
+    cursor: pointer;
+    color: var(--cso-white);
+    transition: color 0.3s;
+}
+.noblogscontainer{ 
+    border-radius: 10px;
+    border: 3px solid var(--font-active);
+    margin-bottom: 30px;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.noblogscontainer--text{
+    font-size: 65px;
+    text-align: center;
+}

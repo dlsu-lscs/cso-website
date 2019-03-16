@@ -5,10 +5,10 @@
         </div>
         <div class = "nav-items-wrapper">
             <div class = "nav-items">
-                <div class = "nav-item">HOME</div>
+                <a href = "/"><div class = "nav-item">HOME</div></a>
                 <div class = "nav-item">ABOUT</div>
                 <div class = "nav-item">ORGANIZATIONS</div>
-                <div class = "nav-item">BLOG</div>
+                <a href = "/blogs"><div class = "nav-item">BLOGS</div></a>
                 <div class = "nav-item">CONTACT</div>
             </div>
         </div>
