@@ -64,3 +64,11 @@ php artisan route:clear
 php artisan config:clear
 php artisan storage:link
 ```
+
+
+users:
+
+```bash
+php artisan make:auth
+
+```

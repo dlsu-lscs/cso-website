@@ -65,6 +65,11 @@ body {
     margin: auto;
     align-items: center;
 }
+
+.nav-items--right{
+    position: absolute;
+    right: 0;
+}
 .nav-item{
     cursor: pointer;
     float: left;
@@ -76,6 +81,9 @@ body {
 .nav-item:hover{
     color: var(--font-active);
 
+}
+.admin-item:hover{
+    color: var(--cso-white);
 }
 .content{
     width: 100%;

@@ -22,8 +22,8 @@
                             <div>Status: <span style = "color: var(--error-red); font-weight: bold;">Trash</span></div>
                         @endif
                         {{Form::submit('Publish', ['class' => 'button right'])}}
-                        <button class = "right linkbutton" type="submit"formaction="/admin/draft"><i class="fa fa-save"></i> Save Draft</button>
-                        <button class = "right linkbutton" type="submit"formaction="/admin/preview"><i class="fa fa-eye"></i> Preview</button>
+                        <button class = "right linkbutton" type="submit"formaction="/csoadmin/draft"><i class="fa fa-save"></i> Save Draft</button>
+                        <button class = "right linkbutton" type="submit"formaction="/csoadmin/preview"><i class="fa fa-eye"></i> Preview</button>
                     </div>
                     <div class = "form-group uploadform">
                         <div id = "img-uploader" onclick = "uploadThumbnail()" onmouseover="uploadImageHover()" onmouseout="uploadImageRemove()"  style = "background-image: url('{{$blog->img}}');">

@@ -8,13 +8,13 @@
                 <div class = "admin-side-item">
             @show
                 <i class="fas fa-edit"></i> 
-                <a href = "/admin"><span class = "admin-text-item"> Create Blog</span></a>
+                <a href = "/csoadmin"><span class = "admin-text-item"> Create Blog</span></a>
             </div>
             @section('EditBlogSection')
                 <div class = "admin-side-item">
             @show
                 <i class="fa fa-pencil"></i> 
-                <a href = "/admin/viewblogs"><span class = "admin-text-item"> Edit Blog</span></a>
+                <a href = "/csoadmin/viewblogs"><span class = "admin-text-item"> Edit Blog</span></a>
             </div>
             @section('DraftSection')
                 <div class = "admin-side-item">
@@ -46,12 +46,22 @@
 <div class = "admin-nav-bar"> 
     <div class = "nav-wrapper">
         <div class = "nav-items-wrapper">
-            <div class = "nav-items">
-                <a href = "/"><div class = "nav-item">HOME</div></a>
-                <div class = "nav-item">ABOUT</div>
-                <div class = "nav-item">ORGANIZATIONS</div>
-                <div class = "nav-item">BLOG</div>
-                <div class = "nav-item">CONTACT</div>
+            <div class = "nav-items left" style = "visibility: hidden;">
+                <a href = "/"><div class = "nav-item admin-item">HOME</div></a>
+                <div class = "nav-item admin-item">ABOUT</div>
+                <div class = "nav-item admin-item">ORGANIZATIONS</div>
+                <div class = "nav-item admin-item">BLOG</div>
+                <div class = "nav-item admin-item">CONTACT</div>
+            </div>
+            <div class = "nav-items--right">
+                    <a href="{{ route('logout') }}"
+                    onclick="event.preventDefault();
+                             document.getElementById('logout-form').submit();">
+                            <div class = "nav-item admin-item">Logout</div>
+                    </a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        {{ csrf_field() }}
+                    </form>
             </div>
         </div>
     </div>

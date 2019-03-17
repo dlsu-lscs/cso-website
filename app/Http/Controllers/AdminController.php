@@ -7,8 +7,22 @@ use App\Blog; // Blog model uses namespace App;
 use Carbon\Carbon;
 class AdminController extends Controller
 {
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth', ['except' => 'login']);
+    }
+
     public function index(){
         return view('Admin.Home');
+    }
+
+    public function login(){
+        return view('Admin.Login');
     }
 
     public function editblog($id)
