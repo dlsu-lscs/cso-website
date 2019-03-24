@@ -1,56 +1,68 @@
 
 @extends('Layouts.main')
 @section('header')
-    <title>Home</title>
+    <title>Council of Student Organizations</title>
     <link rel="stylesheet" href="{{asset('css/Pages/home.css')}}">
+    <link rel="stylesheet" href="{{asset('css/Pages/mediaqueries/home.css')}}">
+    <link rel="stylesheet" href="{{asset('css/Extras/anim.css')}}">
+    <script src = "{{asset('js/extras/anim.js')}}"></script>
 @endsection
 
 @section('content')
+<script>
+    new WOW().init();
+</script>
     <div class = "content">
         <!-- TOP SECTION -->
         <div class = "slide-show">
             <div class = "slideshow__container">
                 <div class = "slideshow__stage">
-                <div class = "slideshow__content left slide1">slide1</div>
-                <div class = "slideshow__content left slide2">slide2</div>
-                <div class = "slideshow__content left slide3">slide3</div>
+                    <div class = "slideshow__content slide1">
+                        <div class= "slideshow__content__item"></div>
+                        <div class= "slideshow__content__item">
+                            <div>
+                            <div class = "slideshow__content__item__title">COUNCIL OF STUDENT ORGANIZATIONS</div>
+                            <div class = "slideshow__content__item__body">The Council of Student Organizations (CSO) is the union of accredited professional (PROF), special interest (SPIN) and socio-civic organizations of De La Salle University. Since its founding in 1974, the Council has continuously delivered quality student services and has produced outstanding student leaders dedicated to serving and contributing to the Lasallian Community. To support the preparation, execution, and documentation of the activities/projects/initiatives of the accredited organizations, nine Executive Teams work under the supervision of the CSO Executive Board. The CSO Executive Board also serves as the coordinating entity of the Council Body composed of the Presidents of the CSO member organizations.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class = "slideshow__content slide2">slide2</div>
+                    <div class = "slideshow__content slide3">slide3</div>
+
+                    <div class = "slideshow__content slide3">slide4</div>
                 </div>
             </div>
-            <div class = "carousel-btn crsl-left crsl-disabled" onclick = "slidePrev()"><i class="fas fa-chevron-left"></i></div>
+            <div class = "carousel-btn crsl-left" onclick = "slidePrev()"><i class="fas fa-chevron-left"></i></div>
             <div class = "carousel-btn crsl-right" onclick = "slideNext()"><i class="fas fa-chevron-right"></i></div>
 
             <div class = "carousel-select">
                 <div class = "carousel-circle crs1 crsl-focus" onclick="turnSlide(1)"></div>
                 <div class = "carousel-circle crs2" onclick="turnSlide(2)"></div>
                 <div class = "carousel-circle crs3" onclick="turnSlide(3)"></div>
+                <div class = "carousel-circle crs4" onclick="turnSlide(4)"></div>
                 
             </div>
         </div>
         <div class = "quote-banner">
+            <div class = "wow fadeInLeft">
             "Lead with passion and serve with purpose, this is the heart of CSO."
+            </div>
         </div>
         <!-- /TOP SECTION -->
         <!-- ORG SECTION -->
         <div class = "a-section org-section">
-            <div class = "default-title org-title">Organizations</div>
+            <div class = "default-title org-title wow bounceInUp">ORGANIZATIONS</div>
             <div class = "org-body">
-                <div class = "org-card">
+                @foreach ($clusters as $key => $cluster)
 
-                    <div class = "org-card__desc">ASO</div>
-                </div>
-                <div class = "org-card">
-                    <div class = "org-card__desc">ASPIRE</div>
-                </div>
-                <div class = "org-card">
-                    <div class = "org-card__desc">CAP 12</div>
-                </div>
-                <div class = "org-card">
-                    <div class = "org-card__desc">ENGAGE</div>
-                </div>
-                <div class = "org-card">
-                    <div class = "org-card__desc">PROBE</div>
-                </div>
-                <div class = "center-container"><div class = "see-more">Check Organizations</div></div>
+                    <div class = "org-card">
+                        @foreach ($cluster as $item)
+                            <img class = "org-card__img left" src = "{{$item['img']}}">
+                        @endforeach
+                        <div class = "org-card__desc">{{$key}}</div>
+                    </div>
+                @endforeach
+                <a href = "/organizations"><div class = "center-container"><div class = "see-more">Check Organizations</div></div></a>
 
             </div>
         </div>
@@ -59,7 +71,7 @@
         <!-- ACTIVITIES SECTION -->
         <div class = "parallax-background">
             <div class = "a-section activities-section">
-                <div class = "default-title activities-title">Annual Activities</div>
+                <div class = "default-title activities-title wow bounceInUp">Annual Activities</div>
                 <div class = "activity-body-1">
                     <div class = "activity-part photo-1"></div>
                     <div class = "activity-part desc-1">

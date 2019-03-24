@@ -19,9 +19,9 @@ class CreateClientinfosTable extends Migration
             $table->string('color2')->default('');
             $table->string('color3')->default('');
             $table->string('color4')->default('');
-            $table->mediumText('aboutus')->default('');
-            $table->mediumText('vision')->default('');
-            $table->mediumText('mission')->default('');
+            $table->mediumText('aboutus');
+            $table->mediumText('vision');
+            $table->mediumText('mission');
             $table->string('weburl')->default('');
             $table->string('email')->default('');
             $table->string('fburl')->default('');

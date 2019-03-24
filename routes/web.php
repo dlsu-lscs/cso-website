@@ -24,6 +24,9 @@
 // });
 
 Route::get('/', 'PageController@index');
+Route::get('organizations', 'PageController@organizations');
+Route::get('organizations/{id}', 'PageController@orgpage');
+Route::get('aboutus', 'PageController@about');
 Route::get('csoadmin', 'AdminController@index');
 // Route::get('csoadmin/login', 'AdminController@login');
 Route::get('csoadmin/viewblogs', 'AdminController@viewblogs');
@@ -38,6 +41,13 @@ Route::resource('blogs','BlogController');
 Route::get('csoadmin/login', 'Auth\LoginController@showLoginForm')->name('login');
 Route::post('csoadmin/login', 'Auth\LoginController@login');
 Route::post('logout', 'Auth\LoginController@logout')->name('logout');
+
+
+// Admin Control
+// Route::get('csoadmin/makeclusters', 'AdminController@createclusters');
+// Route::post('csoadmin/makeclusters', 'AdminController@handlecreateclusters')->name('makecluster');
+Route::get('csoadmin/updateinfo', 'AdminController@updateinfo');
+Route::post('csoadmin/addinfo', 'AdminController@handleupdateinfo')->name('makeinfo');
 
 
 Route::get('/home', 'HomeController@index')->name('home');
