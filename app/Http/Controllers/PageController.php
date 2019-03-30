@@ -8,6 +8,7 @@ use App\clusters;
 use App\clientinfo;
 use App\clientlogos;
 use App\orgphotos;
+use App\officer;
 
 class PageController extends Controller
 {
@@ -62,12 +63,15 @@ class PageController extends Controller
             $clientlogo = clientlogos::where('client_id', $client->id)->first();
 
             $orgphoto1 = orgphotos::where('client_id', $client->id)->first();
+
+            $orgofficers = officer::where('client_id', $client->id)->get();
+
             $data = array();
             $data['clientinfo'] = $clientinfo;
             $data['client'] = $client;
             $data['clientlogo'] = $clientlogo;
             $data['orgphoto1'] = $orgphoto1;
-
+            $data['orgofficers'] = $orgofficers;
             return view('Home.Orgpage')->with($data);
         }
         else{

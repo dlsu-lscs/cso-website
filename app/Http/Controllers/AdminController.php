@@ -7,6 +7,7 @@ use App\Blog; // Blog model uses namespace App;
 use App\client;
 use App\clusters;
 use App\clientinfo;
+use App\officer;
 use Carbon\Carbon;
 class AdminController extends Controller
 {
@@ -324,6 +325,25 @@ class AdminController extends Controller
         }
         $clientinfo->save();
         return redirect('/csoadmin/updateinfo')->with('success', 'cluster info '.$clientinfo->color1.' '.$request->input('color2'));
+    }
+
+    public function createofficers(Request $request){
+        $clients = client::all();
+        // $clusters = clusters::all();
+        $data = array(
+            'clients' => $clients,
+        );
+        return view('Admin.createofficers')->with($data);
+    }
+
+    public function handlecreateofficers(Request $request){
+
+        $officer = new officer;
+        $officer->name = $request->input('name');
+        $officer->position = $request->input('position');
+        $officer->client_id = $request->input('client');
+        $officer->save();
+        return redirect('/csoadmin/makeofficers')->with('success', 'cluster info Created');
     }
 
 }

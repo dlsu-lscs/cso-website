@@ -71,7 +71,7 @@
         <!-- ACTIVITIES SECTION -->
         <div class = "parallax-background">
             <div class = "a-section activities-section">
-                <div class = "default-title activities-title wow bounceInUp">Annual Activities</div>
+                <div class = "default-title activities-title">Annual Activities</div>
                 <div class = "activity-body-1">
                     <div class = "activity-part photo-1"></div>
                     <div class = "activity-part desc-1">

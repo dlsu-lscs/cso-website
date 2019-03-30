@@ -10,4 +10,5 @@ class officer extends Model
     protected $table = 'officers';
 
     protected $primaryKey = 'id';
+    public $timestamps = false;
 }

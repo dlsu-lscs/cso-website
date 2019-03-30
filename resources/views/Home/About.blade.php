@@ -32,12 +32,12 @@
                 <div class="pdb__desc__body">The Council of Student Organizations is committed to delivering quality services and activities as well as developing proactive and dynamic student leaders befitting the standards of a world-class reseasrch University. We create and maintain conditions where our member organizations can achieve optimum performance and realize their goals. We are driven by the ideals of the Lasallian mission, thus, we work actively to feed the needs of the students and ulitimately promote the growth of their potentials.</div>
             </div>
             <div class="pdb__photo">
-                <img src="{{asset('assets/sample/vismis_sample01.jpg')}}" alt=""/>
+                <img src="{{asset('assets/csofiles/CSO Pictures/watwedo.jpg')}}" alt=""/>
             </div>
         </div>
         <div class="pdb">
             <div class="pdb__photo">
-                <img src="{{asset('assets/sample/vismis_sample02.jpg')}}" alt=""/>                
+                <img src="{{asset('assets/csofiles/CSO Pictures/onecso.jpg')}}" alt=""/>                
             </div>
             <div class="pdb__desc">
                 <div class="pdb__desc__header">Our <span class="cso-accent">Mission</div>
@@ -84,7 +84,7 @@
         <div id="ebpb">
             <div class="ebpb__leader">
                 <div class="ebpb__leader__photo">
-                    <img src="{{asset('assets/sample/eb_sample01.jpg')}}" alt=""/>
+                    <img src="{{asset('assets/csofiles/CSO EB Pictures/COUNCIL CHAIRPERSON - JASHIA CHUA .JPG')}}" alt=""/>
                 </div>
                 <div class="ebpb__leader__desc">
                     <div class="ebpb__leader__desc__name">Jashia Caila Chua</div>
@@ -93,7 +93,7 @@
             </div>
             <div class="ebpb__leader">
                 <div class="ebpb__leader__photo">
-                    <img src="{{asset('assets/sample/eb_sample01.jpg')}}" alt=""/>                 
+                    <img src="{{asset('assets/csofiles/CSO EB Pictures/EVC INTERNALS - ELISA DY.JPG')}}" alt=""/>                 
                 </div>
                 <div class="ebpb__leader__desc">
                     <div class="ebpb__leader__desc__name">Elisa Dy</div>
@@ -102,7 +102,7 @@
             </div>
             <div class="ebpb__leader">
                 <div class="ebpb__leader__photo">
-                    <img src="{{asset('assets/sample/eb_sample01.jpg')}}" alt=""/>
+                    <img src="{{asset('assets/csofiles/CSO EB Pictures/EVC EXTERNALS - MHARJORIE SANDEL.JPG')}}" alt=""/>
                 </div>
                 <div class="ebpb__leader__desc">
                     <div class="ebpb__leader__desc__name">Mharjorie Sandel</div>
@@ -111,7 +111,7 @@
             </div>
             <div class="ebpb__leader">
                 <div class="ebpb__leader__photo">
-                    <img src="{{asset('assets/sample/eb_sample01.jpg')}}" alt=""/>
+                    <img src="{{asset('assets/csofiles/CSO EB Pictures/EVC ACTIVITIES AND DOCUMENTATIONS - FELICCI LARA.JPG')}}" alt=""/>
                 </div>
                 <div class="ebpb__leader__desc">
                     <div class="ebpb__leader__desc__name">Armina Felicci Lara</div>
@@ -120,7 +120,7 @@
             </div>
             <div class="ebpb__leader">
                 <div class="ebpb__leader__photo">
-                    <img src="{{asset('assets/sample/eb_sample01.jpg')}}" alt=""/>
+                    <img src="{{asset('assets/csofiles/CSO EB Pictures/EVC FINANCE - NICOLLE MADRID.JPG')}}" alt=""/>
                 </div>
                 <div class="ebpb__leader__desc">
                     <div class="ebpb__leader__desc__name">Nicolle Bien Madrid</div>

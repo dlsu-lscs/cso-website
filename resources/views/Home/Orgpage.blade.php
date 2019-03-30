@@ -88,102 +88,26 @@
     <section id="et">
         <div class="sec__header">The <span class="jema-accent" style = "color: {{$clientinfo->color1}}">Executive Team</span></div>        
         <div class="et__sub">
+            @foreach ($orgofficers as $orgofficer)
             <div class="et__comm">
                 <div class="et__comm__cont">
-                    <div class="et__comm__cont__title">Activity Monitoring Team (AMT)</div>
+                    <div class="et__comm__cont__title">{{$orgofficer->name}}</div>
                     <div class="et__comm__cont__memb">
                         <p>
-                            Juan Pedro dela Cruz<br>
-                            <i>Vice Chairperson</i>
+                            {{$orgofficer->position}}<br>
+                            {{-- <i>Vice Chairperson</i> --}}
                         </p>
                     </div>                        
                 </div>
             </div>
-            <div class="et__comm">
-                <div class="et__comm__cont">
-                    <div class="et__comm__cont__title">Organizational Research and Analysis (ORGRES)</div>
-                    <div class="et__comm__cont__memb">
-                        <p>
-                            Juan Pedro dela Cruz<br>
-                            <i>Vice Chairperson</i>
-                        </p>
-                    </div>                        
-                </div>
-            </div>
-        </div>
-        <div class="et__sub">
-            <div class="et__comm">
-                <div class="et__comm__cont">
-                    <div class="et__comm__cont__title">Activity Monitoring Team (AMT)</div>
-                    <div class="et__comm__cont__memb">
-                        <p>
-                            Juan Pedro dela Cruz<br>
-                            <i>Vice Chairperson</i>
-                        </p>
-                    </div>                        
-                </div>
-            </div>
-            <div class="et__comm">
-                <div class="et__comm__cont">
-                    <div class="et__comm__cont__title">Organizational Research and Analysis (ORGRES)</div>
-                    <div class="et__comm__cont__memb">
-                        <p>
-                            Juan Pedro dela Cruz<br>
-                            <i>Vice Chairperson</i>
-                        </p>
-                    </div>                        
-                </div>
-            </div>
-            <div class="et__comm">
-                <div class="et__comm__cont">
-                    <div class="et__comm__cont__title">Organizational Research and Analysis (ORGRES)</div>
-                    <div class="et__comm__cont__memb">
-                        <p>
-                            Juan Pedro dela Cruz<br>
-                            <i>Vice Chairperson</i>
-                        </p>
-                    </div>                        
-                </div>
-            </div>
-            <div class="et__comm">
-                <div class="et__comm__cont">
-                    <div class="et__comm__cont__title">Organizational Research and Analysis (ORGRES)</div>
-                    <div class="et__comm__cont__memb">
-                        <p>
-                            Juan Pedro dela Cruz<br>
-                            <i>Vice Chairperson</i>
-                        </p>
-                    </div>                        
-                </div>
-            </div>
-            <div class="et__comm">
-                <div class="et__comm__cont">
-                    <div class="et__comm__cont__title">Organizational Research and Analysis (ORGRES)</div>
-                    <div class="et__comm__cont__memb">
-                        <p>
-                            Juan Pedro dela Cruz<br>
-                            <i>Vice Chairperson</i>
-                        </p>
-                    </div>                        
-                </div>
-            </div>
-            <div class="et__comm">
-                <div class="et__comm__cont">
-                    <div class="et__comm__cont__title">Organizational Research and Analysis (ORGRES)</div>
-                    <div class="et__comm__cont__memb">
-                        <p>
-                            Juan Pedro dela Cruz<br>
-                            <i>Vice Chairperson</i>
-                        </p>
-                    </div>                        
-                </div>
-            </div>
+            @endforeach
+            
         </div>
     </section>
     <section id="footer"></section>
     
 </div>
     <!-- NAVBAR -->
-    @include('Layouts.navbar')
+    @include('Layouts.gluednav')
     <!-- /NAVBAR -->
     @endsection

@@ -46,6 +46,8 @@ Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 // Admin Control
 // Route::get('csoadmin/makeclusters', 'AdminController@createclusters');
 // Route::post('csoadmin/makeclusters', 'AdminController@handlecreateclusters')->name('makecluster');
+Route::get('csoadmin/makeofficers', 'AdminController@createofficers');
+Route::post('csoadmin/makeofficers', 'AdminController@handlecreateofficers')->name('makeofficers');
 Route::get('csoadmin/updateinfo', 'AdminController@updateinfo');
 Route::post('csoadmin/addinfo', 'AdminController@handleupdateinfo')->name('makeinfo');
 
