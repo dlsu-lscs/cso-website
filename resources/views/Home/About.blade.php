@@ -51,7 +51,7 @@
         <div class="cv__container">
             <div class="cv__cv">
                 <div class="cv__cv__photo">
-                    <img src="{{asset('assets/sample/logo-placeholder.png')}}" alt=""/>
+                    {{-- <img src="{{asset('assets/sample/logo-placeholder.png')}}" alt=""/> --}}
                 </div>
                 <div>
                     <div class="cv__cv__label">Competence</div>
@@ -60,7 +60,7 @@
             </div>
             <div class="cv__cv">
                 <div class="cv__cv__photo">
-                    <img src="{{asset('assets/sample/logo-placeholder.png')}}" alt=""/>                    
+                    {{-- <img src="{{asset('assets/sample/logo-placeholder.png')}}" alt=""/>                     --}}
                 </div>
                 <div>
                     <div class="cv__cv__label">Service</div>
@@ -69,7 +69,7 @@
             </div>
             <div class="cv__cv">
                 <div class="cv__cv__photo">
-                    <img src="{{asset('assets/sample/logo-placeholder.png')}}" alt=""/>                    
+                    {{-- <img src="{{asset('assets/sample/logo-placeholder.png')}}" alt=""/>                     --}}
                 </div>
                 <div>
                     <div class="cv__cv__label">Order</div>

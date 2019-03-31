@@ -313,6 +313,7 @@ clip-path: polygon(0 0, 58% 0, 100% 100%, 0% 100%);
 
 .cv__cv {
     display: flex;
+    padding: 20px;
 }
 
 .cv__cv__photo img {
@@ -325,10 +326,12 @@ clip-path: polygon(0 0, 58% 0, 100% 100%, 0% 100%);
     font-size: 1.5em;
     font-weight: 700;
     margin-bottom: 8px;
+    text-align: center;
 }
 
 .cv__cv__body {
     max-width: 20vw;
+    text-align: center; 
 }
 
 #eb, #et {
