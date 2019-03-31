@@ -84,11 +84,11 @@
         <div id="ebpb">
             <div class="ebpb__leader">
                 <div class="ebpb__leader__photo">
-                    <img src="{{asset('assets/csofiles/CSO EB Pictures/COUNCIL CHAIRPERSON - JASHIA CHUA .JPG')}}" alt=""/>
+                    <img src="{{asset('assets/csofiles/CSO EB Pictures/EVC ACTIVITIES AND DOCUMENTATIONS - FELICCI LARA.JPG')}}" alt=""/>
                 </div>
                 <div class="ebpb__leader__desc">
-                    <div class="ebpb__leader__desc__name">Jashia Caila Chua</div>
-                    <div class="ebpb__leader__desc__title">Council Chairperson</div>                    
+                    <div class="ebpb__leader__desc__name">Armina Felicci Lara</div>
+                    <div class="ebpb__leader__desc__title">Executive Vice Chairperson for Finance</div>                    
                 </div>                
             </div>
             <div class="ebpb__leader">
@@ -102,20 +102,20 @@
             </div>
             <div class="ebpb__leader">
                 <div class="ebpb__leader__photo">
+                    <img src="{{asset('assets/csofiles/CSO EB Pictures/COUNCIL CHAIRPERSON - JASHIA CHUA .JPG')}}" alt=""/>
+                </div>
+                <div class="ebpb__leader__desc">
+                    <div class="ebpb__leader__desc__name">Jashia Caila Chua</div>
+                    <div class="ebpb__leader__desc__title">Council Chairperson</div>                    
+                </div>                
+            </div>
+            <div class="ebpb__leader">
+                <div class="ebpb__leader__photo">
                     <img src="{{asset('assets/csofiles/CSO EB Pictures/EVC EXTERNALS - MHARJORIE SANDEL.JPG')}}" alt=""/>
                 </div>
                 <div class="ebpb__leader__desc">
                     <div class="ebpb__leader__desc__name">Mharjorie Sandel</div>
                     <div class="ebpb__leader__desc__title">Executive Vice Chairperson for Externals</div>                    
-                </div>                
-            </div>
-            <div class="ebpb__leader">
-                <div class="ebpb__leader__photo">
-                    <img src="{{asset('assets/csofiles/CSO EB Pictures/EVC ACTIVITIES AND DOCUMENTATIONS - FELICCI LARA.JPG')}}" alt=""/>
-                </div>
-                <div class="ebpb__leader__desc">
-                    <div class="ebpb__leader__desc__name">Armina Felicci Lara</div>
-                    <div class="ebpb__leader__desc__title">Executive Vice Chairperson for Finance</div>                    
                 </div>                
             </div>
             <div class="ebpb__leader">

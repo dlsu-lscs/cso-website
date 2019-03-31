@@ -26,3 +26,41 @@
     margin-top: 15px;
     margin-bottom: 15px;
 }
+
+
+.socialcontent{
+    position: fixed;
+    width: 120px;
+    height: 200px;
+    /* background-color: red; */
+    margin-left: -200px;
+    padding: 30px;
+    text-align: center;
+    opacity: 0;
+    transition: all 0.25s ease;
+}
+
+.socialcontent__button{
+    font-size: 25px;
+    margin: 10px;
+    cursor: pointer;
+    text-align: center;
+    transition: color 0.25s ease;
+}
+.socialcontent__button:hover{
+    color: var(--cso-black);
+}
+
+.socialcontent.socialglue{
+    opacity: 1;
+}
+
+.socialfooter{
+    height: 30px;
+}
+
+.socialfooter__but{
+    font-size: 24px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
