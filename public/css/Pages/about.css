@@ -66,7 +66,7 @@ body {
     background-size: cover;
     background-position: center 10%; 
     display: flex;
-    align-items: center;
+    /* align-items: center; */
     justify-content: center;
 }
 
@@ -100,17 +100,18 @@ body {
 .banner-content {
     text-align: center;
     max-width: 70%;
-    padding-right: 21%;
+    /* padding-right: 21%; */
     color: var(--cso-white);
     z-index: 1;
+    margin-top: 60px;
 }
 
 .banner-content > * {
-    text-align: left;
+    text-align: center;
 }
 
 .banner__main-txt {
-    font-size: 3.5em;
+    font-size: 2.7em;
     font-weight: 900;
     text-transform: uppercase;
 }
@@ -312,6 +313,7 @@ clip-path: polygon(0 0, 58% 0, 100% 100%, 0% 100%);
 
 .cv__cv {
     display: flex;
+    padding: 20px;
 }
 
 .cv__cv__photo img {
@@ -324,10 +326,12 @@ clip-path: polygon(0 0, 58% 0, 100% 100%, 0% 100%);
     font-size: 1.5em;
     font-weight: 700;
     margin-bottom: 8px;
+    text-align: center;
 }
 
 .cv__cv__body {
     max-width: 20vw;
+    text-align: center; 
 }
 
 #eb, #et {
