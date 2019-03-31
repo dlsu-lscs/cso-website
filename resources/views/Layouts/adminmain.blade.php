@@ -24,6 +24,8 @@
             filebrowserUploadUrl: '/laravel-filemanager/upload?type=Files&_token='
         };
         CKEDITOR.replace( 'article-ckeditor', options );
+        CKEDITOR.replace( 'vission-ckeditor', options );
+        CKEDITOR.replace( 'mission-ckeditor', options );
     </script> 
     <script>
         function uploadImageHover(){

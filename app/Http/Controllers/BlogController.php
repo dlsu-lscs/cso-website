@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Blog; // Blog model uses namespace App;
+use App\client; // Blog model uses namespace App;
+use App\clientlogos; // Blog model uses namespace App;
 // use DB;
 
 class BlogController extends Controller

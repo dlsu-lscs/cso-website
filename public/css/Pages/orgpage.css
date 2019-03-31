@@ -1,0 +1,32 @@
+
+:root {
+    --accent-jema: #005425;
+}
+
+#about.about--jema {
+    background-color: var(--accent-jema);
+}
+
+.jema-accent {
+    color: var(--accent-jema);
+}
+
+.banner__org-jema__l {
+    background: url(img/grp_org_jema_01.jpg);
+    background-position: center center; 
+}
+
+.banner__org-jema__r:before {
+    background: url(img/grp_org_jema_02.jpg);
+    background-position: center center; 
+    
+}
+
+.banner__org-mes__l {
+    background: url(img/grp-photo__mes.jpg);
+}
+
+.banner__org-mes__r {
+    background: url(img/grp-photo__mes01.jpg);
+}
+

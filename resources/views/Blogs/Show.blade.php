@@ -1,6 +1,6 @@
 @extends('Layouts.main')
 @section('header')
-    <title>{{$blog->title}} | CSO</title>
+    <title>{{$blog->title}} | Council of Student Organizations</title>
     <link rel="stylesheet" href="{{asset('css/Blogs/BlogShow.css')}}">
 @endsection
 
@@ -34,10 +34,10 @@
             </div>
             
 
-            {!!Form::open(['action' => ['BlogController@destroy', $blog->id], 'method'=> 'POST'])!!}
+            {{-- {!!Form::open(['action' => ['BlogController@destroy', $blog->id], 'method'=> 'POST'])!!}
                 {{Form::hidden('_method', 'DELETE')}}
                 {{Form::submit('Delete')}}
-            {!!Form::close()!!}
+            {!!Form::close()!!} --}}
         </div>
     </div>
     @include('Layouts.navbar')

@@ -2,6 +2,7 @@
     --color-font: rgb(127,127,127);
     --font-active: rgb(67,67,67);
     --shadow-color: grey;   
+    --glass-color: #e0e0e0;
     --color-bg-global: rgb(244,244,244);
     --color-white: rgb(254, 254, 254);
     --color-natural-white: 	#f9f9f9;
@@ -16,11 +17,12 @@
     --background-success: #dff0d8;
     --border-success: #d6e9c6;
     --font: "Open Sans";
-    --nav-size: 60px;
+    --nav-size: 55px;
     --sidebar-size: 180px;
     --blog-width: 1080px;
     --green-gradient: linear-gradient(to right, #1e3f20, #3c763d);
     --dark-gradient: linear-gradient(to right, #1e3f20, #132714);
+    --grey-glass: rgba(127,127,127,0.7);
 }
 
 * {
@@ -36,18 +38,39 @@ body {
 
 
 .nav-bar{
-    position: fixed;
+    position: absolute;
     top: 0;
-    background-color: var(--color-white);
+    /* background-color: var(--color-white); */
+    background-color: rgba(255,255,255,0);
     width: 100%;
     height: var(--nav-size);
-    box-shadow: 0px 3px 5px var(--shadow-color);
+    /* box-shadow: 0px 1px 2px var(--shadow-color); */
+    z-index: 1000 !important;
+    font-size: 0.8em;
+    transition: all 0.2s ease-in;
 }
+
+.nav-bar.glued{
+    background-color: var(--cso-white);
+    box-shadow: 0px 1px 2px var(--shadow-color);
+    position: fixed;
+}
+
 
 .img-logo{
     position: absolute;
-    width: 60px;
-    height: 60px;   
+    width: 120px;
+    height: 120px;   
+    z-index: 999 !important;
+    visibility: hidden;
+    transition: all 0.4s ease;
+    opacity: 0;
+}
+
+.nav-bar.glued .img-logo{
+    color: var(--color-font);
+    opacity: 1;
+    visibility: visible;
 }
 
 .nav-wrapper{
@@ -72,24 +95,35 @@ body {
     position: absolute;
     right: 0;
 }
+
 .nav-item{
     cursor: pointer;
     float: left;
     line-height: var(--nav-size);
-    padding-left: 30px;
+    padding-left: 18.5px;
+    padding-right: 18.5px;
     text-align: center;
     transition: all 0.4s;
+    color: var(--cso-white);
 }
 .nav-item:hover{
-    color: var(--font-active);
-
+    color: var(--cso-gold);
 }
+.nav-bar.glued .nav-item{
+    color: var(--color-font);
+}
+.nav-bar.glued .nav-item:hover{
+    color: var(--font-active);
+}
+
+
+
 .admin-item:hover{
     color: var(--cso-white);
 }
 .content{
     width: 100%;
-    margin-top: var(--nav-size);
+    /* margin-top: var(--nav-size); */
 }
 
 .pagination *{
