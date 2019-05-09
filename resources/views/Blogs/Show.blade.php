@@ -4,16 +4,38 @@
     <link rel="stylesheet" href="{{asset('css/Blogs/BlogShow.css')}}">
 
     <script src="{{asset('js/Blogs/socialscroll.js')}}"></script>
-    <meta property="og:url"           content="https://www.your-domain.com/your-page.html" />
-    <meta property="og:type"          content="website" />
     <meta property="og:title"         content="{{$blog->title}}" />
+
+    <meta property="og:image"         content="{{asset($blog->img)}}" />
     <meta property="og:description"   content="{{str_limit(strip_tags($blog->body), $limit = 220, $end = '...')}}" />
-    <meta property="og:image"         content="localhost:8000/{{$blog->img}}   " />
+    <meta name="twitter:title" content="{{$blog->title}}">
+    <meta name="twitter:description" content="{{str_limit(strip_tags($blog->body), $limit = 220, $end = '...')}}">
+    <meta name="twitter:image" content="{{asset($blog->img)}}">
+    <meta name="twitter:card" content="summary_large_image">
 @endsection
 
 @section('content')
 
     <script>function fbs_click() {u=location.href;t=document.title;window.open('http://www.facebook.com/sharer.php?u='+encodeURIComponent(u)+'&t='+encodeURIComponent(t),'sharer','toolbar=0,status=0,width=626,height=436');return false;}</script>
+    <script>
+        function share_fb(link){
+            window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(link),'sharer','toolbar=0,status=0,width=626,height=436');
+        
+        }
+        function msg_func(link, app_id){
+            window.open('fb-messenger://share?link=' + encodeURIComponent(link) + '&app_id=' + encodeURIComponent(app_id),'sharer','toolbar=0,status=0,width=626,height=436');
+        }
+
+        function share_twitter(link){
+            window.open('https://twitter.com/intent/tweet?text={{$blog->title}} ' + encodeURIComponent(link),'sharer','toolbar=0,status=0,width=626,height=436');
+            "https://twitter.com/intent/tweet?text=California%20Joins%20New%20Mexico%20in%20Withdrawing%20National%20Guard%20From%20Border%20by%20Citizen%20Truth%20Staff%20https%3A%2F%2Flink.medium.com%2FjcBKIidsqV"
+        }
+        
+        function msg_click(){
+            // msg_func(location.href, document.title);
+            share_twitter(location.href);
+        }
+    </script>
     <div class = "content">
         <div class = "thumbnail-container"></div>
 
@@ -26,11 +48,9 @@
                         <i class="fa fa-facebook-official"></i>
                     </div>
                 </a>
-                <a href="http://twitter.com/home?status=Currentlyreading" title="Click to share this post on Twitter">
-                <div class = "socialcontent__button">
-                    <i class="fa fa-twitter-square"></i>
+                <div class = "socialcontent__button" onclick = "msg_click()">
+                    <i class="fa fa-twitter"></i>
                 </div>
-                </a>
 
             </div>
             <h1 class = "blogcontainer__header"> {{$blog->title}} </h1>
@@ -78,12 +98,12 @@
                         <i class="fa fa-facebook-official"></i>
                     </div>
                 </a>
-                <div class = "socialfooter__but left">
-                    <i class="fa fa-twitter-square"></i>
+                <div class = "socialfooter__but left" onclick = "msg_click()">
+                    <i class="fa fa-twitter"></i>
                 </div>
             </div>
             
         </div>
     </div>
-    @include('Layouts.navbar')
+    @include('Layouts.navbar', ['blognav' => true])
 @endsection

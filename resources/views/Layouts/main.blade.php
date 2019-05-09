@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="icon" href="{!! asset('assets/CSO Logo.png') !!}"/>
     @yield('header')
-    <title>{{config('app.name', 'Council of Student Organizations')}}</title>
 </head>
 <body>
     @include('Layouts.errorsnackbar')

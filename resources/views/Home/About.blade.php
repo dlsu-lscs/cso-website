@@ -1,17 +1,21 @@
 @extends('Layouts.main')
 @section('header')
     <title>About Us | Council of Student Organizations</title>
+    <meta property="og:image" content="{{asset('assets/csofiles/CSO Pictures/IMG_0868.png')}}" />
     <link rel="stylesheet" type="text/css" href="{{asset('css/Pages/about.css')}}">
     <link rel="stylesheet" href="{{asset('css/Extras/anim.css')}}">
     <script src = "{{asset('js/extras/anim.js')}}"></script>
 @endsection
 
 @section('content')
+<script>
+    new WOW().init();
+</script>
 <div class = "content">
     <section id="banner" class="banner--abt">
         <div class="banner-content">
-            <div class="banner__main-txt">Lead with passion and serve with purpose,</div>
-            <div class="banner__sub-txt">this is the heart of CSO.</div>
+            <div class="banner__main-txt wow fadeInLeftBig">Lead with passion and serve with purpose,</div>
+            <div class="banner__sub-txt wow fadeInRightBig">this is the heart of CSO.</div>
         </div>
     </section>
     <!-- fix this block! no vh -->
@@ -27,19 +31,19 @@
     </section>
     <section id="vis-mis">
         <div class="pdb">
-            <div class="pdb__desc">
+            <div class="pdb__desc wow fadeInLeft">
                 <div class="pdb__desc__header">Our <span class="cso-accent">Vision</span></div>
                 <div class="pdb__desc__body">The Council of Student Organizations is committed to delivering quality services and activities as well as developing proactive and dynamic student leaders befitting the standards of a world-class reseasrch University. We create and maintain conditions where our member organizations can achieve optimum performance and realize their goals. We are driven by the ideals of the Lasallian mission, thus, we work actively to feed the needs of the students and ulitimately promote the growth of their potentials.</div>
             </div>
-            <div class="pdb__photo">
+            <div class="pdb__photo wow fadeInRight">
                 <img src="{{asset('assets/csofiles/CSO Pictures/watwedo.jpg')}}" alt=""/>
             </div>
         </div>
         <div class="pdb">
-            <div class="pdb__photo">
+            <div class="pdb__photo wow fadeInLeft">
                 <img src="{{asset('assets/csofiles/CSO Pictures/onecso.jpg')}}" alt=""/>                
             </div>
-            <div class="pdb__desc">
+            <div class="pdb__desc wow fadeInRight">
                 <div class="pdb__desc__header">Our <span class="cso-accent">Mission</div>
                 <div class="pdb__desc__body">The Council of Student Organizations provides relevant and quality services that support heightened student involvement and development. We continually set standards that contribute to the flourishing of our member organizations as we work together to inspire growth and create a platform for communication. We are pioneers of nation-building and Lasallian-formation by maintaining a sense of social awareness and spiritual growth in our activities.</div>
             </div>
@@ -47,9 +51,9 @@
         </div>
     </section>
     <section id="cv">
-        <div class="sec__header">Our <span class="cso-accent">Core Values</span></div>
+        <div class="sec__header  wow fadeInDown">Our <span class="cso-accent">Core Values</span></div>
         <div class="cv__container">
-            <div class="cv__cv">
+            <div class="cv__cv wow fadeInUp">
                 <div class="cv__cv__photo">
                     {{-- <img src="{{asset('assets/sample/logo-placeholder.png')}}" alt=""/> --}}
                 </div>
@@ -58,7 +62,7 @@
                     <div class="cv__cv__body">Upholding the Lasallian brand of leadership, the Council serves as an example in innovating standards.</div>
                 </div>
             </div>
-            <div class="cv__cv">
+            <div class="cv__cv wow fadeInUp">
                 <div class="cv__cv__photo">
                     {{-- <img src="{{asset('assets/sample/logo-placeholder.png')}}" alt=""/>                     --}}
                 </div>
@@ -67,7 +71,7 @@
                     <div class="cv__cv__body">Driven by the passion to serve, the Council abides by the Lasallian Core Values for the benefit of its member organizations.</div>
                 </div>
             </div>
-            <div class="cv__cv">
+            <div class="cv__cv wow fadeInUp">
                 <div class="cv__cv__photo">
                     {{-- <img src="{{asset('assets/sample/logo-placeholder.png')}}" alt=""/>                     --}}
                 </div>
@@ -79,7 +83,7 @@
         </div>
     </section>
     <section id="eb">
-        <div class="sec__header">The <span class="cso-accent">Executive Board</span></div>        
+        <div class="sec__header wow fadeInDown">The <span class="cso-accent">Executive Board</span></div>        
         <div class="sec__desc">The CSO Executive Board is composed of the Chairperson, Executive Vice Chairperson for Internals, Executive Vice Chairperson for Externals, Executive Vice Chairperson for Finance, Executive Vice Chairperson for Activity and Documentations. As the Executive Board of 44th CSO, we commit to uphold our legacy which is to produce leaders who lead with passion and serve with a purpose. Together as one CSO, we will continue to show the heart of CSO through our service to the organizations.</span></div>        
         <div id="ebpb">
             <div class="ebpb__leader">
@@ -130,7 +134,7 @@
         </div>
     </section>
     <section id="et">
-        <div class="sec__header">The <span class="cso-accent">Executive Team</span></div>        
+        <div class="sec__header wow fadeInUp">The <span class="cso-accent">Executive Team</span></div>        
         <div class="et__sub">
                 <div class="et__comm">
                     <div class="et__comm__logo"><img src="{{asset('assets/Team Logos/Copy of AMT(Transparent).png')}}" alt=""/></div>
@@ -295,7 +299,7 @@
                         <div class="et__comm__cont__title">Activity Processing and Screening (APS)</div>
                         <div class="et__comm__cont__memb">
                             <p>
-                                Paul Leary Delariarte<br>
+                                Arsenic Santos<br>
                                 <i>Vice Chairperson</i>
                             </p>
                             <p>
@@ -341,6 +345,6 @@
 
 </div>
     <!-- NAVBAR -->
-    @include('Layouts.navbar')
+    @include('Layouts.navbar', ['aboutnav'=>true])
     <!-- /NAVBAR -->
 @endsection

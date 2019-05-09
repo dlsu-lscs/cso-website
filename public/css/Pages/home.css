@@ -1,9 +1,13 @@
 .slide-show{
     width: 100%;
-    height: 650px;
-    /* background-color: var(--cso-green); */
-    background: var(--dark-gradient);
+    height: 100vh;
+    background-color: var(--cso-green);
+    /* background: var(--dark-gradient); */
     position: relative;
+}
+
+.slide-show::before{
+    
 }
 
 
@@ -147,6 +151,8 @@
     width: 100%;
 }
 .org-title{
+    font-size: 2em;
+    font-weight: bold;
     margin-bottom: 20px;
     text-align: center;
 }
@@ -154,11 +160,14 @@
 .org-body{
     margin-top: 10px;
     width: 100%;
-    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .org-card{
     position: relative;
+    border-radius: 3px;
     margin-left: 17.5px;
     margin-right: 17.5px;
     margin-top: 35px;
@@ -166,13 +175,13 @@
     width: 30%;
     box-shadow: 0px 2px 3px var(--shadow-color);
     background-color: var(--color-white);
-    padding-left: 7.5px;
+    /* padding-left: 7.5px; */
     padding-right: 7.5px;
     float: left;
     transition: box-shadow 0.2s ease-in;
 }
 .org-card:hover{
-    box-shadow: 0px 6px 14px var(--shadow-color);
+    /* box-shadow: 0px 6px 14px var(--shadow-color); */
 }
 
 .org-card__img{
@@ -202,14 +211,15 @@
     margin-top: 5px;
 }
 .see-more{
-    width: 120px;
-    height: 35px;
+    margin-top: 25px;
+    width: 170px;
+    height: 40px;
     background-color: var(--cso-green);
     float: left;
     border-radius: 35px;
-    line-height: 35px;
+    line-height: 40px;
     text-align: center;
-    font-size: 10px;
+    font-size: 14px;
     cursor: pointer;
     color: var(--cso-white);
     transition: color 0.3s;
@@ -223,60 +233,26 @@
     width: 100%;
 
     /* The image used */
-    background-image: url("../../assets/gradient-background.png");
+    /* background-image: url("../../assets/gradient-background.png"); */
 
     /* Set a specific height */
 
     /* Create the parallax scrolling effect */
-    background-attachment: fixed;
+    /* background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover; */
+    background: rgb(156,151,35);
+    /* background: linear-gradient(180deg, rgba(156,151,35,0.3984944319524685) 10%, rgba(156,151,35,0.13518910982361698) 100%); */
+    background: linear-gradient(180deg, rgba(156,151,35,0.3984944319524685) 10%, rgba(156,151,35,0) 100%);
 }
 
 .activities-title{
-    color: var(--cso-gold);
+    font-size: 2.5em;
+    font-weight: bold;
+    color: var(--cso-black);
 }
 
-.activity-body-1{
-    margin-top: 45px;
-    height: 500px;
-}
-.activity-part{
-    height: 100%;
-    width: 50%;
-    float: left;
-}
-
-.activity-title{
-    font-size: 35px;
-    color: var(--cso-gold);
-}
-
-.activity-desc{
-    color: var(--color-white);
-    text-align: justify;
-}
-
-
-.photo-1{
-    background-image: url("../../assets/leap-img.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;      
-    box-shadow: 0px 2px 3px var(--shadow-color);
-}
-.desc-1{
-    padding: 20px;
-    margin-left: auto;
-    margin-right: auto;
-    left: 0;
-    right: 0;
-    bottom: 0;  
-    display: flex;
-    align-items: center;
-    justify-content: center; 
-}
 .blog-section{
 
 }
@@ -285,4 +261,149 @@
     height: 500px;
     box-shadow: 0px 2px 3px var(--shadow-color);
     background-color: var(--color-white);
+}
+
+
+.activities-section{
+    max-width: 1400px;
+}
+.eventcontainer{
+    /* background-color: blue; */
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.eventsection{
+    /* background-color: red; */
+    max-width: 400px;
+    padding: 40px;
+    display:inline-block; 
+    color: var(--font-active);
+}
+
+.eventsection__imgcontainer{
+    width: 175px;
+    height: 175px;
+    display:inline-block; 
+}
+
+.eventsection__img{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.eventsection__title{
+    color: var(--cso-black);
+    font-size: 1.4em;
+    font-weight: bold;
+}
+
+.eventsection__body{
+    text-align: justify;
+    
+}
+.eventsection__line--left{
+    text-align: left;
+    margin-top: 25px;
+}
+.eventsection__date{
+    text-align: left;
+}
+
+.eventsection__participants{
+    text-align: right;
+}
+
+.eventsection__audience{
+    text-align: left;
+    margin-top: 15px;
+}
+.gold-accent{
+    color: var(--cso-gold);
+}
+
+.--bold{
+    font-weight: bold;
+}
+
+.leasec{
+    max-width: 1000px;
+}
+
+
+
+#banner {
+    position: relative;
+    height: 80vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center 10%; 
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+}
+
+.banner--abt {
+    background-image: url('../../assets/csofiles/CSOfb/IMG_0878.jpg');
+}
+
+.banner--abt:after {
+    content:'\A';
+    position:absolute;
+    width:100%;
+    height:100%;
+    top:0; left:0;
+    background: rgb(0,0,0);
+    background: linear-gradient(0deg, rgba(0,0,0,0.8354692218684349) 5%, rgba(0,0,0,0.785049053801208) 25%, rgba(0,0,0,0.3945728633250176) 45%, rgba(0,212,255,0) 100%);
+/* transition: all 0.5s;
+    -webkit-transition: all 0.5s; */
+}
+
+.banner--abt:before {
+    content:'';
+    position:absolute;
+    width:100%;
+    height:100%;
+    top:0; left:0;
+    /* background: rgba(0, 205, 0, 0.096); */
+/* transition: all 0.5s;
+    -webkit-transition: all 0.5s; */
+}
+
+.banner-content {
+    text-align: center;
+    max-width: 70%;
+    /* padding-right: 21%; */
+    color: var(--cso-white);
+    z-index: 1;
+    margin-top: 60px;
+    position: absolute;
+    bottom: 30px;
+}
+
+.banner-content > * {
+    text-align: center;
+}
+
+.banner__main-txt {
+    font-size: 2.7em;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.banner__sub-txt {
+    font-size: 1em;
+}
+
+.tempnav{
+    height: 60px;
+    width: 100%; 
+    background-color: var(--cso-green);
+    box-shadow: 0px 1px 2px var(--shadow-color);
+}
+
+.tempnav__img{
+
 }

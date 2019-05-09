@@ -16,6 +16,7 @@ class CreateClustersTable extends Migration
         Schema::create('clusters', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
+            $table->string('meaning');
         });
         // Insert some stuff
         DB::table('clusters')->insert(array('name' => 'ASO'));

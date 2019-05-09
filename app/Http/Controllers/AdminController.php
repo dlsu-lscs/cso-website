@@ -104,7 +104,7 @@ class AdminController extends Controller
                 $longago.="a few seconds";
             }
             $longago.=" ago.";
-            $blog->lonago = $longago;
+            $blog->longago = $longago;
 
         }
         return view('Admin.ViewBlogs')->with('blogs', $blogs);

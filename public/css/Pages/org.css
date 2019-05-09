@@ -12,7 +12,8 @@
 }
 
 .banner--abt {
-    background-image: url('../../assets/csofiles/CSO PICTURES/IMG_0868.jpg');
+    background-image: url('../../assets/csofiles/CSOfb/orgs.jpg');
+    background-size: cover;
 }
 
 .banner--abt:after {
@@ -22,7 +23,7 @@
     height:100%;
     top:0; left:0;
     background: rgb(0,0,0);
-    background: linear-gradient(90deg, rgba(0,0,0,0.8354692218684349) 5%, rgba(0,0,0,0.785049053801208) 25%, rgba(0,0,0,0.5945728633250176) 45%, rgba(0,212,255,0) 100%);
+    background: linear-gradient(90deg, rgba(0,0,0,0.7354692218684349) 5%, rgba(0,0,0,0.585049053801208) 25%, rgba(0,0,0,0.4945728633250176) 45%, rgba(0,212,255,0) 100%);
 /* transition: all 0.5s;
     -webkit-transition: all 0.5s; */
 }
@@ -87,6 +88,7 @@
     margin-top: 22px;
     display: flex;
     justify-content: center;
+    border-radius: 3px;
     align-items: center;
 }
 

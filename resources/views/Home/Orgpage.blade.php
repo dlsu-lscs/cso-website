@@ -1,7 +1,7 @@
 
 @extends('Layouts.main')
 @section('header')
-    <title>Mechanical Engineering Society | Council of Student Organizations</title>
+    <title>{{$client->name}} | Council of Student Organizations</title>
     <link rel="stylesheet" type="text/css" href="{{asset('css/Pages/about.css')}}">
 
     <link rel="stylesheet" type="text/css" href="{{asset('css/Pages/orgpage.css')}}">
@@ -31,7 +31,7 @@
             <!-- <p>
             Mechanical Engineering Society <span>(MES)</span>                
             </p> -->
-            <p>{{$client->name}} <span>({{$client->acronym}})</span></p>
+            <p style = "max-width:90%">{{$client->name}} <span>({{$client->acronym}})</span></p>
         </div>
         <div class="banner__org-logo banner__org-jema__r">
 
@@ -108,6 +108,6 @@
     
 </div>
     <!-- NAVBAR -->
-    @include('Layouts.gluednav')
+    @include('Layouts.gluednav', ['orgnav' => true])
     <!-- /NAVBAR -->
     @endsection

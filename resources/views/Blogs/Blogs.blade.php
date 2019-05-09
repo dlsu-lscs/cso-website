@@ -19,7 +19,7 @@
                                     <p class = "featuredblog__title">{{$blog->title}}</p>
                                     <p class = "featuredblog__desc">{{str_limit(strip_tags($blog->body), $limit = 120, $end = '...')}}</p>
                                     <p class = "featuredblog__desc">by: <span class = "featuredblog__author">{{$blog->author}}</span></p>
-                                    <p class = "featuredblog__small">Posted 3 seconds ago</p>
+                                    <p class = "featuredblog__small">{{$blog->longago}}</p>
                                 </div>
                         </div>
                         </a>
@@ -31,7 +31,7 @@
                                 <div class = "minorblog__info left">
                                     <a href = "/blogs/{{$blog->id}}"><p class = "minorblog__info__title">{{$blog->title}}</p></a>
                                     <p class = "minorblog__info__small">by: <b>{{$blog->author}}</b></p>
-                                    <p class = "minorblog__info__small">Posted a few hours ago.</p>
+                                    <p class = "minorblog__info__small">{{$blog->longago}}</p>
                                     <p class = "minorblog__info__desc">{{str_limit(strip_tags($blog->body), $limit = 220, $end = '...')}}</p>
                                     <a href = "/blogs/{{$blog->id}}"><div class ="minorblog__info__readcontainer"><div class = "read-more">Read more</div></div></a>
                                 </div>
@@ -47,5 +47,5 @@
             @endif
         </div>
     </div>
-    @include('Layouts.navbar')
+    @include('Layouts.navbar', ['blognav'=>true])
 @endsection
