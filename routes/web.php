@@ -36,6 +36,8 @@ Route::post('csoadmin/preview', 'AdminController@preview');
 Route::post('csoadmin/draft', 'AdminController@draft');
 Route::post('csoadmin/publish', 'AdminController@publish');
 Route::post('csoadmin/delete', 'AdminController@delete');
+Route::get('csoadmin/manageorgs', 'AdminController@manageorgs');
+Route::get('csoadmin/manageorgs/{id}', 'AdminController@orgeditor');
 Route::resource('blogs','BlogController');
 // Auth::routes();
 Route::get('csoadmin/login', 'Auth\LoginController@showLoginForm')->name('login');

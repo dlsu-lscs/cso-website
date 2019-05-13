@@ -7,6 +7,7 @@ use App\Blog; // Blog model uses namespace App;
 use App\client;
 use App\clusters;
 use App\clientinfo;
+use App\clientlogos;
 use App\officer;
 use Carbon\Carbon;
 class AdminController extends Controller
@@ -346,4 +347,43 @@ class AdminController extends Controller
         return redirect('/csoadmin/makeofficers')->with('success', 'cluster info Created');
     }
 
+    public function manageorgs(Request $request){
+
+        $clusters = clusters::all();
+        $data = array();
+        $data['clusters'] = array();
+        $data['meaning'] = array();
+        foreach ($clusters as $cluster) {
+            $data['clusters'][$cluster->name] = array();
+            $data['meaning'][$cluster->name] = $cluster->meaning;
+            $clientinfos = clientinfo::where('cluster_id', $cluster->id)->get();
+            foreach ($clientinfos as $key => $clientinfo){
+                $client = client::where('id', $clientinfo->client_id)->first();
+                $clientlogo = clientlogos::where('client_id', $client->id)->first();
+                $data['clusters'][$cluster->name][$key] = array();
+                $data['clusters'][$cluster->name][$key]['info'] = $clientinfo;
+                $data['clusters'][$cluster->name][$key]['basic'] = $client;
+                $data['clusters'][$cluster->name][$key]['logos'] = $clientlogo;
+            }
+        }
+        // return view('Home.Orgs')->with($data);
+        return view('Admin.manageorgs')->with($data);
+    }
+
+    public function orgeditor($id){
+        $clientinfo = clientinfo::find($id);
+        if($clientinfo){
+            $data = array();
+            $data['clientinfo'] = $clientinfo;
+            
+            $client = client::where('id', $clientinfo->client_id)->first();
+            $data['client'] = $client;
+
+            return view('Admin.orgeditor')->with($data);
+        }
+        else{
+            return redirect('/csoadmin/manageorgs');
+        }
+    }
+    
 }

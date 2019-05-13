@@ -1,13 +1,13 @@
 <nav class = "nav-bar">
     <div class = "nav-wrapper">
-        {{-- <div class = "img-logo">
+        <div class = "img-logo">
             <img src = "{{asset('assets/CSO Logo.png')}}" class = "cso-logo" width = "100%" height = "100%"></img>
-        </div> --}}
+        </div>
         <div class = "nav-items-wrapper">
             <div class = "nav-items">
-                <div class = "img-logo2">
+                {{-- <div class = "img-logo2">
                     <img src = "{{asset('assets/CSO Logo.png')}}" class = "cso-logo" width = "100%" height = "100%"></img>
-                </div>
+                </div> --}}
                 @if(isset($homenav))
                 <a href = "/"><div class = "nav-item nav-selected">HOME</div></a>
                 @else
