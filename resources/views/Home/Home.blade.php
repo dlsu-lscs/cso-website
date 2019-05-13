@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="{{asset('css/Pages/home.css')}}">
     <link rel="stylesheet" href="{{asset('css/Pages/mediaqueries/home.css')}}">
     <link rel="stylesheet" href="{{asset('css/Extras/anim.css')}}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <script src = "{{asset('js/extras/anim.js')}}"></script>
 @endsection
 
@@ -18,10 +19,26 @@
             <div class = "tempnav__img"></div>
         </div> --}}
         <section id="banner" class="banner--abt">
-            <div class="banner-content">
-                <div class="banner__main-txt wow fadeInLeftBig">Council of Student Organizations</div>
-                <div class="banner__sub-txt"> Providing service to its accredited organizations by ensuring that the activities/projects/initiatives of these organizations are well prepared, documented, and executed. </div>
+            <div class="banner__bg">
+                <div>
+                </div>
+                <div>
+                </div>
             </div>
+            <div class="banner__center">
+                <!-- set to autoplay w/ jquery on button click -->
+                <!-- <iframe width="100%" height="100%"
+                    src="https://www.youtube.com/embed/rTE9W8DW5GI">
+                </iframe> -->
+                <div class="banner-content">
+                    <div class="banner__main-txt">Council of Student Organizations</div>
+                    <!-- <div class="banner__main-txt wow fadeInLeftBig">Council of Student Organizations</div> -->
+                    <div class="banner__sub-txt"> Providing service to its accredited organizations by ensuring that the activities/projects/initiatives of these organizations are well prepared, documented, and executed. </div>
+                    <div class="divider"></div>
+                    <button class="button button--white"><i class="fas fa-play-circle"></i>Play Video</button>
+                </div>
+            </div>
+            
         </section>
         {{-- <div class = "slide-show">
             <div class = "slideshow__container">
@@ -59,8 +76,20 @@
             </div>
         </div> --}}
         <!-- /TOP SECTION -->
+        <!-- TO ABOUT -->
+        <section id="about">
+            <div id="about-wrapper" class="section-content">
+                <div class="section__info section-content__left">
+                    <div class="section__info__title">Passionate leaders since 1974.</div>
+                    <div class="divider"></div>
+                    <div class="section__info__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+                    <button class="button">Read More About CSO</button>            
+                </div>
+                <img src="{{asset('assets/csofiles/CSOfb/IMG_0878.jpg')}}" alt="">
+            </div>
+        </section>
         <!-- ORG SECTION -->
-        <div class = "a-section org-section">
+        <!-- <div class = "a-section org-section">
             <div class = "default-title org-title">ORGANIZATIONS</div>
             <div class = "org-body">
                 @foreach ($clusters as $key => $cluster)
@@ -76,11 +105,31 @@
             </div>
 
             <a href = "/organizations"><div class = "center-container"><div class = "see-more">Check Organizations</div></div></a>
-        </div>
+        </div> -->
+        <section id="orgs" class="section-content section-content--short">
+            <div class="section__info--center">
+                <div class="section__info__title">40 Organizations, 1 Family.</div>
+                <div class="divider"></div>
+                <div class="section__info__body section__info__body--short">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+                <button class="button">See all CSO-accredited Organizations</button>            
+            </div>
+        </section>
         <!-- /ORG SECTION -->
 
         <!-- ACTIVITIES SECTION -->
-        <div class = "parallax-background">
+        <section id="events">
+            <div id="events-wrapper" class="section-content section-content--offcenter">
+                <!-- <img class="section-content__left" src="{{asset('assets/csofiles/Sample Photos/sample-events-fw-ls.jpg')}}" alt=""> -->
+                <div class="section__info section__info--bg">
+                    <div class="section__info__title section__info__title--alt ">Some tagline for events.</div>
+                    <!-- <div class="divider"></div> -->
+                    <div class="section__info__body section__info__body--alt">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+                    <button class="button button--white">See All Annual CSO Events</button>            
+                </div>
+            </div>
+        </section>
+
+        <!-- <div class = "parallax-background">
             <div class = "a-section activities-section">
                 <div class = "default-title activities-title"><span class = "gold-accent">44TH</span> CSO EVENTS</div>
                 
@@ -188,10 +237,42 @@
                     
                 </div>
             </div>
-        </div>
+        </div> -->
         <!-- /ACTIVITIES SECTION -->
 
         <!-- BLOG SECTION -->
+        <section id="blogs" class="section-content section-content--short">
+            <div class="section__info--la">
+                <div class="section__info__title section__info__title--alt">The latest blogs.</div>
+                <div class="divider"></div>
+                <div class="article-wrapper">
+                    <div class="ap">
+                        <img  src="{{asset('assets/csofiles/CSOfb/IMG_0878.jpg')}}" alt="">
+                        <div class="ap-title"><a href="">Erap losing in Manila; Isko Moreno set to become new mayor</a></div>
+                        <div class="ap-timestamp">Yesterday</div>
+                    </div>
+                    <div class="ap">
+                        <img  src="{{asset('assets/csofiles/CSOfb/IMG_0878.jpg')}}" alt="">
+                        <div class="ap-title">Erap losing in Manila; Isko Moreno set to become new mayor</div>
+                        <div class="ap-timestamp">Yesterday</div>
+                    </div>
+                    <div class="ap">
+                        <img  src="{{asset('assets/csofiles/CSOfb/IMG_0878.jpg')}}" alt="">
+                        <div class="ap-title">Erap losing in Manila; Isko Moreno set to become new mayor</div>
+                        <div class="ap-timestamp">Yesterday</div>
+                    </div>
+                    <div class="ap">
+                        <img  src="{{asset('assets/csofiles/CSOfb/IMG_0878.jpg')}}" alt="">
+                        <div class="ap-title">Erap losing in Manila; Isko Moreno set to become new mayor</div>
+                        <div class="ap-timestamp">Yesterday</div>
+                    </div>
+                </div>
+                <div class="ra">
+                    <button class="button button--white">See all Blogs</button>                                
+                </div>
+            </div>
+        </section>
+
         {{-- <div class = "a-section blog-section">
             <div class = "default-title blog-title">BLOGS</div>
             <div class = "main-blog"></div>
