@@ -53,3 +53,6 @@ Route::post('csoadmin/addinfo', 'AdminController@handleupdateinfo')->name('makei
 
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('contact', 'PageController@contact');
+Route::post('contact', 'PageController@mailto')->name('contact');
