@@ -378,7 +378,7 @@ class AdminController extends Controller
         // $config['activities']= $activities;
         // $data['about'] = $config['about'];
         file_put_contents(base_path() .'/config/constants.php', '<?php return ' . var_export($config, true) . ';');
-        return redirect('/csoadmin/editmaininfo')->with('success', 'main info ');
+        return redirect('/csoadmin/editmaininfo')->with('success', 'Changed Successfully!');
     }
 
     public function createofficers(Request $request){
