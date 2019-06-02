@@ -2,3 +2,13 @@
     margin: 40px;
     margin-top: 10px;
 }
+
+.input-team-name {
+    width: 80%;
+    /* display: inline; */
+}
+
+.input-team-alias {
+    width: 10%;
+    /* display: inline; */
+}

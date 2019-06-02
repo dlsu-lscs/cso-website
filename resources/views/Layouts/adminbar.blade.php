@@ -22,6 +22,12 @@
                 <i class="fa fa-pencil"></i> 
                 <a href = "/csoadmin/manageorgs"><span class = "admin-text-item"> Manage Orgs</span></a>
             </div>
+            @section('EditMainInfoSection')
+                <div class = "admin-side-item">
+            @show
+                <i class="fas fa-edit"></i> 
+                <a href = "/csoadmin/editmaininfo"><span class = "admin-text-item"> Edit CSO Info</span></a>
+            </div>
             {{-- @section('DraftSection')
                 <div class = "admin-side-item">
             @show

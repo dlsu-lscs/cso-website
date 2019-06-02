@@ -10,6 +10,7 @@ use App\clientinfo;
 use App\clientlogos;
 use App\officer;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Log;
 class AdminController extends Controller
 {
     /**
@@ -328,6 +329,58 @@ class AdminController extends Controller
         return redirect('/csoadmin/updateinfo')->with('success', 'cluster info '.$clientinfo->color1.' '.$request->input('color2'));
     }
 
+    public function handleupdatemaininfo(Request $request){
+        $list = array('about', 'vision', 'mission');
+        // $arr_vclist = array('amt_vc', 'orgres_vc', 'hrd_vc', 'mnl_vc', 'pmt_vc', 'pnp_vc', 'adm_vc', 'aps_vc', 'fin_vc');
+        // $arr_mlist = array('amt_m', 'orgres_m', 'hrd_m', 'mnl_m', 'pmt_m', 'pnp_m', 'adm_m', 'aps_m', 'fin_m');
+        Log::error('HEY');
+        Log::error($request->input());
+        Log::error('HEY');
+        Log::error($request->input('teams'));
+        echo 'Hey';
+        $config = include base_path() .'/config/constants.php';
+
+        for ($i = 0; $i < count($list); $i++) {
+            $config[$list[$i]] = $request->input($list[$i], '');
+        } 
+        foreach($request->input('core.*') as $key => $core) {
+            $config['core'][$key]->name = $core['name'];
+            $config['core'][$key]->description = $core['description'];
+        }
+        foreach($request->input('eb') as $key => $name) {
+            $config['eb'][$key]->name = $name;
+        }
+        $tmp = array();
+        foreach($request->input('teams.*') as $key=>$team) {
+            $tmp[$key] = (object) array(
+                'name' => $team['name'],
+                'alias' => strtoupper($team['alias']),
+                'vc' => $team['vc'],
+                'members' => preg_split('/([\ ]*[\,][\ ]*)+/', $team['members']),
+            );
+            // $config['eb'][$key]->name = $name;
+        }
+        $config['teams'] = $tmp;
+        // for ($i = 0; $i < count($arr_vclist); $i++) {
+        //     $config[$arr_vclist[$i]] = $request->input($arr_vclist[$i], '') ?: '';
+        // } 
+        
+        // for ($i = 0; $i < count($arr_mlist); $i++) {
+        //     $config[$arr_mlist[$i]] = preg_split('/([\ ]*[\,][\ ]*)+/', $request->input($arr_mlist[$i], ''));
+        // } 
+        // $config['about']= $about;
+        // $config['vision']= $vision;
+        // $config['mission']= $mission;
+        // $config['chairperson']= $chairperson;
+        // $config['internals']= $internals;
+        // $config['externals']= $externals;
+        // $config['finance']= $finance;
+        // $config['activities']= $activities;
+        // $data['about'] = $config['about'];
+        file_put_contents(base_path() .'/config/constants.php', '<?php return ' . var_export($config, true) . ';');
+        return redirect('/csoadmin/editmaininfo')->with('success', 'main info ');
+    }
+
     public function createofficers(Request $request){
         $clients = client::all();
         // $clusters = clusters::all();
@@ -368,6 +421,44 @@ class AdminController extends Controller
         }
         // return view('Home.Orgs')->with($data);
         return view('Admin.manageorgs')->with($data);
+    }
+
+    public function maininfoeditor(){
+        // $clientinfo = clientinfo::find($id);
+        // if($clientinfo){
+        //     $data = array();
+        //     $data['clientinfo'] = $clientinfo;
+            
+        //     $client = client::where('id', $clientinfo->client_id)->first();
+        //     $data['client'] = $client;
+
+        //     return view('Admin.orgeditor')->with($data);
+        // }
+        // else{
+        //     return redirect('/csoadmin/manageorgs');
+        // }
+        $data = array();
+        $config = include base_path() .'/config/constants.php';
+        // $data['about'] = $config['about'];
+        // $data['vision'] = $config['vision'];
+        // $data['mission'] = $config['mission'];
+        // $data['chairperson'] = $config['chairperson'];
+        // $data['internals'] = $config['internals'];
+        // $data['externals'] = $config['externals'];
+        // $data['finance'] = $config['finance'];
+        // $data['activities'] = $config['activities'];
+        $data = $config;
+        // join array of strings to a single string
+        // $data['amt_m'] = implode(", ", $data['amt_m']);
+        // $data['orgres_m'] = implode(", ", $data['orgres_m']);
+        // $data['hrd_m'] = implode(", ", $data['hrd_m']);
+        // $data['mnl_m'] = implode(", ", $data['mnl_m']);
+        // $data['pmt_m'] = implode(", ", $data['pmt_m']);
+        // $data['pnp_m'] = implode(", ", $data['pnp_m']);
+        // $data['adm_m'] = implode(", ", $data['adm_m']);
+        // $data['aps_m'] = implode(", ", $data['aps_m']);
+        // $data['fin_m'] = implode(", ", $data['fin_m']);
+        return view('Admin.EditMainInfo')->with($data);
     }
 
     public function orgeditor($id){

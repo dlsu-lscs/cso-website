@@ -38,6 +38,7 @@ Route::post('csoadmin/publish', 'AdminController@publish');
 Route::post('csoadmin/delete', 'AdminController@delete');
 Route::get('csoadmin/manageorgs', 'AdminController@manageorgs');
 Route::get('csoadmin/manageorgs/{id}', 'AdminController@orgeditor');
+Route::get('csoadmin/editmaininfo', 'AdminController@maininfoeditor');
 Route::resource('blogs','BlogController');
 // Auth::routes();
 Route::get('csoadmin/login', 'Auth\LoginController@showLoginForm')->name('login');
@@ -52,6 +53,7 @@ Route::get('csoadmin/makeofficers', 'AdminController@createofficers');
 Route::post('csoadmin/makeofficers', 'AdminController@handlecreateofficers')->name('makeofficers');
 Route::get('csoadmin/updateinfo', 'AdminController@updateinfo');
 Route::post('csoadmin/addinfo', 'AdminController@handleupdateinfo')->name('makeinfo');
+Route::post('csoadmin/editmaininfo', 'AdminController@handleupdatemaininfo')->name('editmaininfo');
 
 
 Route::get('/home', 'HomeController@index')->name('home');
