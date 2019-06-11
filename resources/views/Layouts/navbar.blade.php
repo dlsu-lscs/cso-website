@@ -25,19 +25,14 @@
                 <a href = "/aboutus"><div class = "nav-item">About</div></a>
                 @endif
                 @if(isset($activitiesnav))
-                <a href = "/activities"><div class = "nav-item nav-selected">ACTIVITIES</div></a>
+                <a href = "/activities"><div class = "nav-item nav-selected">Activities</div></a>
                 @else
-                <a href = "/activities"><div class = "nav-item">ACTVITIES</div></a>
+                <a href = "/activities"><div class = "nav-item">Activities</div></a>
                 @endif
                 @if(isset($orgnav))
                 <a href = "/organizations"><div class = "nav-item nav-selected">Organizaions</div></a>
                 @else
                 <a href = "/organizations"><div class = "nav-item">Organizaions</div></a>
-                @endif
-                @if(isset($homenav))
-                <a href = "/"><div class = "nav-item nav-selected">Activities</div></a>
-                @else
-                <a href = "/"><div class = "nav-item">Activities</div></a>
                 @endif
                 @if(isset($blognav))
                 <a href = "/blogs"><div class = "nav-item nav-selected">Blogs</div></a>
