@@ -37,11 +37,48 @@
         }
     </script>
     <div class = "content">
-        <div class = "thumbnail-container"></div>
+            <div class = "socialcontent">
+                    SHARE
+                    <a href="http://www.facebook.com/share.php?u=google.com" onclick="return fbs_click()" target="_blank">
+                        <div class = "socialcontent__button">
+                            <i class="fa fa-facebook-official"></i>
+                        </div>
+                    </a>
+                    <div class = "socialcontent__button" onclick = "msg_click()">
+                        <i class="fa fa-twitter"></i>
+                    </div>
+    
+                </div>
+        <div class = "thumbnail-container">
 
+            <div class = "titlecontainer left">
+                <div class = "titlecontainer__inner">
+                    <div class = "titlecontainer__title">{{$blog->title}}</div><br>
+                    <div class = "dividercontainer"><div class = "divider"></div></div>
+                    <div class = "titlecontainer__subtitle"><br>
+                        by {{$blog->author}}<br>
+                        Published {{date("F", mktime(0, 0, 0, $blog->updated_at->month, 1))}} {{$blog->updated_at->day}}, {{$blog->updated_at->year}} 
+                        @if($blog->updated_at->hour != 12)
+                            {{$blog->updated_at->hour%12}}:{{$blog->updated_at->minute}}
+                        @else
+                            12:{{$blog->updated_at->minute}}
+                        @endif
+                        @if($blog->updated_at->hour >= 12)
+                        p.m.
+                        @else
+                            a.m.
+                        @endif
+                    </div>
+                </div>
+
+            </div>
+            <div class = "imagecontainer right" style = "background-image: url('{{$blog->img}}');">
+
+            </div>
+        </div>
         
         <div class = "blogcontainer">
-            <div class = "socialcontent">
+            {{-- <div class = "socialcontent">
                 SHARE
                 <a href="http://www.facebook.com/share.php?u=google.com" onclick="return fbs_click()" target="_blank">
                     <div class = "socialcontent__button">
@@ -52,8 +89,8 @@
                     <i class="fa fa-twitter"></i>
                 </div>
 
-            </div>
-            <h1 class = "blogcontainer__header"> {{$blog->title}} </h1>
+            </div> --}}
+            {{-- <h1 class = "blogcontainer__header"> {{$blog->title}} </h1>
             <div><br>
                 <div class = "blogcontainer__header right">
                     <small>@if($blog->updated_at->hour != 12)
@@ -73,7 +110,7 @@
                 </div>
                 <div class = "blogcontainer__header left">By: <b>{{$blog->author}}</b></div>
             </div><br>
-            <div class = thumbnailimg style = "background-image: url('{{$blog->img}}');"></div>
+            <div class = thumbnailimg style = "background-image: url('{{$blog->img}}');"></div> --}}
             <div>
                 {!!$blog->body!!}
             </div>

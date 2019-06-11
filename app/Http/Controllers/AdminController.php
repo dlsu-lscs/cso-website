@@ -378,12 +378,92 @@ class AdminController extends Controller
             
             $client = client::where('id', $clientinfo->client_id)->first();
             $data['client'] = $client;
-
+            $officers = officer::where('client_id', $client->id)->get();
+            $data['officers'] = $officers;
             return view('Admin.orgeditor')->with($data);
         }
         else{
             return redirect('/csoadmin/manageorgs');
         }
     }
+    
+    public function handleorgeditor(Request $request){
+
+        $clientid = $request->input('cid');
+
+        $client = client::find($clientid);
+        $clientinfo = clientinfo::where('client_id', $clientid)->first();
+
+        $officers = officer::where('client_id', $client->id)->get();
+
+        foreach($officers as $officer){
+            if($request->input('officer-name--'.$officer->id)){
+                if($request->input('officer-name--'.$officer->id) != $officer->name || $request->input('officer-position--'.$officer->id) != $officer->position){
+                    $officer->name = input('officer-name--'.$officer->id);
+                    $officer->position = $request->input('officer-position--'.$officer->id);
+                    $officer->save();
+                }
+            }
+            else{
+                $officer->delete();
+            }
+        }
+
+        if($client){
+
+            foreach($request->input() as $key => $value){
+                if($value){
+                    if($key == "color1"){
+                        $clientinfo->color1 = $value;
+                    }
+                    elseif($key == "color2"){
+                        $clientinfo->color2 = $value;
+                    }
+                    elseif($key == "color3"){
+                        $clientinfo->color3 = $value;
+                    }
+                    elseif($key == "color4"){
+                        $clientinfo->color4 = $value;
+                    }
+                    elseif($key == "aboutus"){
+                        $clientinfo->aboutus = $value;
+                    }
+                    elseif($key == "vision"){
+                        $clientinfo->vision = $value;
+                    }
+                    elseif($key == "mission"){
+                        $clientinfo->mission = $value;
+                    }
+                    elseif($key == "weburl"){
+                        $clientinfo->weburl = $value;
+                    }
+                    elseif($key == "email"){
+                        $clientinfo->email = $value;
+                    }
+                    elseif($key == "fburl"){
+                        $clientinfo->fburl = $value;
+                    }
+                    elseif($key == "twitterurl"){
+                        $clientinfo->twitterurl = $value;
+                    }
+
+                    elseif(substr($key, 0, 18) == "officer-name--none"){
+                        $newofficer = new officer;
+                        $inputkey = substr($key, 18);
+                        $newofficer->name = $value;
+                        $newofficer->position = $request->input("officer-position--none".$inputkey);
+                        $newofficer->client_id = $clientid;
+                        $newofficer->save();
+                    }
+                }
+            }
+
+            $client->save();
+            $clientinfo->save();
+            return redirect('/csoadmin/manageorgs/'.$clientid)->with('success',  $client->acronym.' info edited!');
+        }
+        return redirect('/csoadmin/manageorgs')->with('fail', 'Error! Client doesnnt exist!');
+    }
+    
     
 }

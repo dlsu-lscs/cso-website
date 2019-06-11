@@ -2,3 +2,83 @@
     margin: 40px;
     margin-top: 10px;
 }
+
+.--colorgroup{
+    margin-right: 22px;
+}
+
+.colortext{
+    padding:5px;
+}
+
+.block-container{
+    margin-top: 30px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0px 2px 6px var(--shadow-color);
+    padding: 15px;
+}
+
+.UpdateButton{
+    width: 140px;
+    height: 40px;
+    border: none;
+    background-color: #e0e0e081;
+    border: 3px solid var(--font-active);
+    cursor: pointer;
+    transition: all 0.2s ease-in;
+}
+
+.UpdateButton:hover{
+    background-color: #929292d5;
+}
+
+.officertext{
+    width: 350px;
+}
+
+.remove-officer{
+    width: 30px;
+    height: 30px;
+    background-color:#B22222;
+    border-radius: 30px;
+    margin-right: 18px;
+    margin-top: 16px;
+    color: var(--glass-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.add-officer{
+    width: 30px;
+    height: 30px;
+    background-color:#228B22;
+    border-radius: 30px;
+    margin-right: 18px;
+    margin-top: 16px;
+    color: var(--glass-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.officerformgroup{
+    overflow: hidden;
+    margin-bottom: 22px;
+    width: 100%;
+}
+
+.minuscontainer{
+    cursor: pointer;
+}
+
+.pluscontainer{
+    cursor: pointer;
+}
+
+.imageuploader{
+    width: 500px;
+    height: 300px;
+    background-color: red;
+}

@@ -1,63 +1,9 @@
-:root {
-    --color-font: rgb(127,127,127);
-    --font-active: rgb(67,67,67);
-    --shadow-color: grey;   
-    --color-bg-global: rgb(244,244,244);
-    --color-white: rgb(254, 254, 254);
-    --cso-green: #1e3f20;
-    --cso-gold: #9c9723;
-    --cso-black: #000000;
-    --cso-white: #FFFFFF;
-    --font: "Open Sans";
-    --nav-size: 60px;
-}
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    background-color: var(--color-bg-global);
-    font-family: var(--font), sans-serif;
-    color: var(--color-font);
-}
 
 .cso-accent {
     color: var(--cso-gold);
 }
 
-#nav {
-    background-color: var(--cso-white);
-    position: relative;
-    z-index: 5;
-    padding: 18px 0 18px 0;
-    font-size: 0.8em;
-}
-
-#nav img {
-    height: 110px;
-    position: absolute;
-    left: 10%;
-    top: 0px;
-}
-
-#nav ul {
-    text-align: center;
-}
-
-#nav ul li {
-    display: inline;
-    text-transform: uppercase;
-    margin-left: 30px;
-}
-
-#nav ul li:nth-child(1) {
-    display: inline;
-    text-transform: uppercase;
-    margin-left: 0;
-}
 
 #banner {
     position: relative;
