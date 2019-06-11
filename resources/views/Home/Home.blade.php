@@ -7,6 +7,10 @@
     <link rel="stylesheet" href="{{asset('css/Extras/anim.css')}}">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <script src = "{{asset('js/extras/anim.js')}}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+    <script src = "{{asset('js/extras/playvid.js')}}"></script>
+        
 @endsection
 
 @section('content')
@@ -25,17 +29,17 @@
                 <div>
                 </div>
             </div>
-            <div class="banner__center">
+            <div id="banner-center" class="banner__center banner__center__bg">
                 <!-- set to autoplay w/ jquery on button click -->
-                <!-- <iframe width="100%" height="100%"
-                    src="https://www.youtube.com/embed/rTE9W8DW5GI">
-                </iframe> -->
+                <iframe id="vid-wrapper" width="100%" height="100%"
+                    src="https://www.youtube.com/embed/rTE9W8DW5GI?autoplay=1" allowfullscreen>
+                </iframe>
                 <div class="banner-content">
-                    <div class="banner__main-txt">Council of Student Organizations</div>
                     <!-- <div class="banner__main-txt wow fadeInLeftBig">Council of Student Organizations</div> -->
+                    <div class="banner__main-txt">Council of Student Organizations</div>
                     <div class="banner__sub-txt"> Providing service to its accredited organizations by ensuring that the activities/projects/initiatives of these organizations are well prepared, documented, and executed. </div>
                     <div class="divider"></div>
-                    <button class="button button--white"><i class="fas fa-play-circle"></i>Play Video</button>
+                    <button id="btn-home-vid" class="button button--white"><i class="fas fa-play-circle"></i>Play Video</button>
                 </div>
             </div>
             
@@ -77,13 +81,13 @@
         </div> --}}
         <!-- /TOP SECTION -->
         <!-- TO ABOUT -->
-        <section id="about">
+        <section id="about" class="main-section">
             <div id="about-wrapper" class="section-content">
                 <div class="section__info section-content__left">
                     <div class="section__info__title">Passionate leaders since 1974.</div>
                     <div class="divider"></div>
                     <div class="section__info__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
-                    <button class="button">Read More About CSO</button>            
+                    <a href = "/aboutus"><button class="button">Read More About CSO</button></a>        
                 </div>
                 <img src="{{asset('assets/csofiles/CSOfb/IMG_0878.jpg')}}" alt="">
             </div>
@@ -106,27 +110,63 @@
 
             <a href = "/organizations"><div class = "center-container"><div class = "see-more">Check Organizations</div></div></a>
         </div> -->
-        <section id="orgs" class="section-content section-content--short">
-            <div class="section__info--center">
-                <div class="section__info__title">40 Organizations, 1 Family.</div>
-                <div class="divider"></div>
-                <div class="section__info__body section__info__body--short">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
-                <button class="button">See all CSO-accredited Organizations</button>            
+        <section id="orgs" class="main-section">
+            <div id="orgs-wrapper" class="section-content section-content--center">
+                <div class="section__solidbg section__solidbg--dg section__solidbg--center">
+                    <div class="section__info__title section__info__title--alt ">A family of organizations.</div>
+                    <div class="divider"></div>
+                    <div class="section__info__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+                    <a href = "/aboutus"><button class="button button--white">See CSO-accredited Organizations</button></a>            
+                </div>
             </div>
         </section>
         <!-- /ORG SECTION -->
 
         <!-- ACTIVITIES SECTION -->
-        <section id="events">
-            <div id="events-wrapper" class="section-content section-content--offcenter">
-                <!-- <img class="section-content__left" src="{{asset('assets/csofiles/Sample Photos/sample-events-fw-ls.jpg')}}" alt=""> -->
-                <div class="section__info section__info--bg">
-                    <div class="section__info__title section__info__title--alt ">Some tagline for events.</div>
-                    <!-- <div class="divider"></div> -->
-                    <div class="section__info__body section__info__body--alt">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
-                    <button class="button button--white">See All Annual CSO Events</button>            
+        <section id="events" class="main-section">
+            <div id="about-wrapper" class="section-content">
+                <div class="section-content__left section-content__photo-square">
+                    <div></div>                    
+                    <img src="{{asset('assets/csofiles/Sample Photos/sample-activities-side.jpg')}}" alt="">
+                </div>
+                <div class="section__info">
+                    <div class="section__info__title">Activities to serve the student body.</div>
+                    <div class="divider"></div>
+                    <div class="section__info__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+                    <a href = "/activities"><button class="button">More About CSO Activities</button></a>            
                 </div>
             </div>
+            <div id="event-carousel">
+                <div class="carousel-controller">
+                    <div class="carousel-title">Annual CSO Events</div>
+                    <div class="carousel-arrow">
+                        <p id="carousel-arrow-prev" class="carousel-arrow-disabled"><i class="fas fa-long-arrow-alt-left"></i></p>
+                        <p id="carousel-arrow-nxt"><i class="fas fa-long-arrow-alt-right"></i></p>
+                    </div>
+                </div>
+                <div class="carousel-items">
+                    <img src="{{asset('assets/csofiles/CSO AA Logos and Pictures/AGB.png')}}" alt="AGB">
+                    <img src="{{asset('assets/csofiles/CSO AA Logos and Pictures/ARW.png')}}" alt="ARW">
+                    <img src="{{asset('assets/csofiles/CSO AA Logos and Pictures/FLARE.png')}}" alt="FLARE">
+                    <img src="{{asset('assets/csofiles/CSO AA Logos and Pictures/FW.png')}}" alt="FW">
+                    <img src="{{asset('assets/csofiles/CSO AA Logos and Pictures/GCA.png')}}" alt="GCA">
+                    <img src="{{asset('assets/csofiles/CSO AA Logos and Pictures/LEA.png')}}" alt="LEA">
+                    <img src="{{asset('assets/csofiles/CSO AA Logos and Pictures/LEAP.jpg')}}" alt="LEAP">
+                    <img src="{{asset('assets/csofiles/CSO AA Logos and Pictures/TUKLAS.png')}}" alt="TUKLAS">
+                    <img src="{{asset('assets/csofiles/CSO AA Logos and Pictures/UGNAYAN.jpg')}}" alt="UGNAYAN">
+                </div>
+                <!-- <img src="{{asset('assets/csofiles/Sample Photos/sample-activities-side.jpg')}}" alt="">
+                <img src="{{asset('assets/csofiles/Sample Photos/sample-activities-side.jpg')}}" alt=""> -->
+            </div>
+            <!-- <div id="events-wrapper" class="section-content section-content--offcenter"> -->
+                <!-- <img class="section-content__left" src="{{asset('assets/csofiles/Sample Photos/sample-events-fw-ls.jpg')}}" alt=""> -->
+                <!-- <div class="section__info section__solidbg--lg"> -->
+                    <!-- <div class="section__info__title section__info__title--alt ">Some tagline for events.</div> -->
+                    <!-- <div class="divider"></div> -->
+                    <!-- <div class="section__info__body section__info__body--alt">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div> -->
+                    <!-- <button class="button button--white">See All Annual CSO Events</button>             -->
+                <!-- </div> -->
+            <!-- </div> -->
         </section>
 
         <!-- <div class = "parallax-background">
@@ -241,7 +281,7 @@
         <!-- /ACTIVITIES SECTION -->
 
         <!-- BLOG SECTION -->
-        <section id="blogs" class="section-content section-content--short">
+        <section id="blogs" class="main-section section-content section-content--short">
             <div class="section__info--la">
                 <div class="section__info__title section__info__title--alt">The latest blogs.</div>
                 <div class="divider"></div>
@@ -249,6 +289,11 @@
                     <div class="ap">
                         <img  src="{{asset('assets/csofiles/CSOfb/IMG_0878.jpg')}}" alt="">
                         <div class="ap-title"><a href="">Erap losing in Manila; Isko Moreno set to become new mayor</a></div>
+                        <div class="ap-timestamp">Yesterday</div>
+                    </div>
+                    <div class="ap">
+                        <img  src="{{asset('assets/csofiles/CSOfb/IMG_0878.jpg')}}" alt="">
+                        <div class="ap-title">Erap losing in Manila; Isko Moreno set to become new mayor</div>
                         <div class="ap-timestamp">Yesterday</div>
                     </div>
                     <div class="ap">
@@ -278,6 +323,50 @@
             <div class = "main-blog"></div>
         </div> --}}
         <!-- /BLOG SECTION -->
+
+        <!-- FOOTER -->
+        <section id="footer">
+            <!--logo, social media shortcuts-->
+            <div class="f-socialmedia">
+                <img src="{{asset('assets/CSO Logo.png')}}" alt="">
+                <div class="f-social-media">
+                    <div><i class="fab fa-facebook-f"></i>dlsu.cso</div>
+                    <div><i class="fab fa-twitter"></i>DLSUCSO</div>
+                </div>
+            </div> 
+            <div class="f-sitemap">
+                <div class="f-sitemap__col">
+                    <div>About</div>
+                    <ul>
+                        <li>History</li>
+                        <li>Mission and Vision</li>
+                        <li>Core Values</li>
+                        <li>Officers</li>
+                    </ul>
+                </div>
+                <div class="f-sitemap__col">
+                    <div>About</div>
+                    <ul>
+                        <li>History</li>
+                        <li>Mission and Vision</li>
+                        <li>Core Values</li>
+                        <li>Officers</li>
+                    </ul>
+                </div>
+                <div class="f-sitemap__col">
+                    <div>About</div>
+                    <ul>
+                        <li>History</li>
+                        <li>Mission and Vision</li>
+                        <li>Core Values</li>
+                        <li>Officers</li>
+                    </ul>
+                </div>
+            </div>
+            <!--navigation-->            
+            <div></div>
+        </section>
+        <!-- /FOOTER -->
     </div>
     <!-- /CONTENT -->
     <!-- NAVBAR -->

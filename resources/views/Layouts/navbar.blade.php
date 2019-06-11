@@ -18,6 +18,11 @@
                 @else
                 <a href = "/aboutus"><div class = "nav-item">ABOUT</div></a>
                 @endif
+                @if(isset($activitiesnav))
+                <a href = "/activities"><div class = "nav-item nav-selected">ACTIVITIES</div></a>
+                @else
+                <a href = "/activities"><div class = "nav-item">ACTVITIES</div></a>
+                @endif
                 @if(isset($orgnav))
                 <a href = "/organizations"><div class = "nav-item nav-selected">ORGANIZATIONS</div></a>
                 @else
