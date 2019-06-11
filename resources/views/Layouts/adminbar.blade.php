@@ -19,7 +19,7 @@
             @section('ManageOrgSection')
                 <div class = "admin-side-item">
             @show
-                <i class="fa fa-pencil"></i> 
+                <i class="fa fa-group"></i> 
                 <a href = "/csoadmin/manageorgs"><span class = "admin-text-item"> Manage Orgs</span></a>
             </div>
             {{-- @section('DraftSection')

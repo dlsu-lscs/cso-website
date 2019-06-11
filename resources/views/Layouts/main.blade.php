@@ -34,6 +34,7 @@
             window.history.back();
         }
     </script>
+    @include('Layouts.footer')
     
 </body>
 </html>
