@@ -140,20 +140,22 @@
                 <div class="carousel-controller">
                     <div class="carousel-title">Annual CSO Events</div>
                     <div class="carousel-arrow">
-                        <p id="carousel-arrow-prev" class="carousel-arrow-disabled"><i class="fas fa-long-arrow-alt-left"></i></p>
-                        <p id="carousel-arrow-nxt"><i class="fas fa-long-arrow-alt-right"></i></p>
+                        <p id="carousel-arrow-prev" class="carousel-arrow-disabled" onclick="slidePrev()"><i class="fas fa-long-arrow-alt-left"></i></p>
+                        <p id="carousel-arrow-nxt" onclick="slideNext()"><i class="fas fa-long-arrow-alt-right"></i></p>
                     </div>
                 </div>
-                <div class="carousel-items">
-                    <img src="{{asset('assets/csofiles/CSO AA Logos and Pictures/AGB.png')}}" alt="AGB">
-                    <img src="{{asset('assets/csofiles/CSO AA Logos and Pictures/ARW.png')}}" alt="ARW">
-                    <img src="{{asset('assets/csofiles/CSO AA Logos and Pictures/FLARE.png')}}" alt="FLARE">
-                    <img src="{{asset('assets/csofiles/CSO AA Logos and Pictures/FW.png')}}" alt="FW">
-                    <img src="{{asset('assets/csofiles/CSO AA Logos and Pictures/GCA.png')}}" alt="GCA">
-                    <img src="{{asset('assets/csofiles/CSO AA Logos and Pictures/LEA.png')}}" alt="LEA">
-                    <img src="{{asset('assets/csofiles/CSO AA Logos and Pictures/LEAP.jpg')}}" alt="LEAP">
-                    <img src="{{asset('assets/csofiles/CSO AA Logos and Pictures/TUKLAS.png')}}" alt="TUKLAS">
-                    <img src="{{asset('assets/csofiles/CSO AA Logos and Pictures/UGNAYAN.jpg')}}" alt="UGNAYAN">
+                <div class = "carousel-stage">
+                    <div class="carousel-items">
+                        <img src="{{asset('assets/csofiles/CSO AA Logos and Pictures/AGB.png')}}" alt="AGB">
+                        <img src="{{asset('assets/csofiles/CSO AA Logos and Pictures/ARW.png')}}" alt="ARW">
+                        <img src="{{asset('assets/csofiles/CSO AA Logos and Pictures/FLARE.png')}}" alt="FLARE">
+                        <img src="{{asset('assets/csofiles/CSO AA Logos and Pictures/FW.png')}}" alt="FW">
+                        <img src="{{asset('assets/csofiles/CSO AA Logos and Pictures/GCA.png')}}" alt="GCA">
+                        <img src="{{asset('assets/csofiles/CSO AA Logos and Pictures/LEA.png')}}" alt="LEA">
+                        <img src="{{asset('assets/csofiles/CSO AA Logos and Pictures/LEAP.jpg')}}" alt="LEAP">
+                        <img src="{{asset('assets/csofiles/CSO AA Logos and Pictures/TUKLAS.png')}}" alt="TUKLAS">
+                        <img src="{{asset('assets/csofiles/CSO AA Logos and Pictures/UGNAYAN.jpg')}}" alt="UGNAYAN">
+                    </div>
                 </div>
                 <!-- <img src="{{asset('assets/csofiles/Sample Photos/sample-activities-side.jpg')}}" alt="">
                 <img src="{{asset('assets/csofiles/Sample Photos/sample-activities-side.jpg')}}" alt=""> -->
@@ -286,7 +288,14 @@
                 <div class="section__info__title section__info__title--alt">The latest blogs.</div>
                 <div class="divider"></div>
                 <div class="article-wrapper">
-                    <div class="ap">
+                        @foreach ($blogs as $blog)
+                            <div class="ap">
+                                <img  src="{{$blog->img}}" alt="">
+                                <div class="ap-title"><a href="">{{$blog->title}}</a></div>
+                                <div class="ap-timestamp">{{$blog->longago}}</div>
+                            </div>
+                        @endforeach
+                    {{-- <div class="ap">
                         <img  src="{{asset('assets/csofiles/CSOfb/IMG_0878.jpg')}}" alt="">
                         <div class="ap-title"><a href="">Erap losing in Manila; Isko Moreno set to become new mayor</a></div>
                         <div class="ap-timestamp">Yesterday</div>
@@ -310,7 +319,7 @@
                         <img  src="{{asset('assets/csofiles/CSOfb/IMG_0878.jpg')}}" alt="">
                         <div class="ap-title">Erap losing in Manila; Isko Moreno set to become new mayor</div>
                         <div class="ap-timestamp">Yesterday</div>
-                    </div>
+                    </div> --}}
                 </div>
                 <div class="ra">
                     <button class="button button--white">See all Blogs</button>                                
@@ -373,6 +382,6 @@
         @include('Layouts.navbar', ['homenav'=>true])
     <!-- /NAVBAR -->
 
-    <script src="{{asset('js/extras/carousel.js')}}"></script>
+    <script src="{{asset('js/extras/eventscarousel.js')}}"></script>
         
 @endsection

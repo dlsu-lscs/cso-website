@@ -20,7 +20,7 @@
     bottom: -275px;
     background-color: var(--cso-green);
     max-width: var(--blog-width);
-    height: 180px;
+    /* height: 180px; */
     padding: 20px;
 
 }

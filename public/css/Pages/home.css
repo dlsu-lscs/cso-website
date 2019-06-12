@@ -686,6 +686,8 @@
 }
 
 .carousel-controller {
+    z-index: 999 !important;
+    cursor: pointer;
   display: flex;
   justify-content: space-between;
 }
@@ -709,6 +711,10 @@
 
 #carousel-arrow-prev {
   margin-right: 10px;
+}
+
+.carousel-stage{
+    overflow: hidden;
 }
 
 .carousel-items {
@@ -778,6 +784,7 @@
 }
 
 #about-wrapper::before {
+    z-index: -999;
   content: "";
   background: url(../../assets/csofiles/Sample\ Photos/sample_bg.jpg);
   background-repeat: no-repeat;

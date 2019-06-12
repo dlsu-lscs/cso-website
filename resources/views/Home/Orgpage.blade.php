@@ -108,6 +108,6 @@
     
 </div>
     <!-- NAVBAR -->
-    @include('Layouts.gluednav', ['orgnav' => true])
+    @include('Layouts.navbar', ['orgnav' => true])
     <!-- /NAVBAR -->
     @endsection

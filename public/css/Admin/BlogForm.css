@@ -5,6 +5,7 @@
     cursor: pointer;
     position: relative;
     background-size: 100% 100%;
+    border: 3px solid var(--font-active);
     background-repeat: no-repeat;
 }
 #img-uploader__snack{

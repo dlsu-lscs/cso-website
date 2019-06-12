@@ -378,6 +378,8 @@ class AdminController extends Controller
             
             $client = client::where('id', $clientinfo->client_id)->first();
             $data['client'] = $client;
+            $clientlogo = clientlogos::where('client_id', $clientinfo->client_id)->first();
+            $data['clientlogo'] = $clientlogo;
             $officers = officer::where('client_id', $client->id)->get();
             $data['officers'] = $officers;
             return view('Admin.orgeditor')->with($data);
@@ -393,6 +395,7 @@ class AdminController extends Controller
 
         $client = client::find($clientid);
         $clientinfo = clientinfo::where('client_id', $clientid)->first();
+        $clientlogo = clientlogos::where('client_id', $clientid)->first();
 
         $officers = officer::where('client_id', $client->id)->get();
 
@@ -446,6 +449,9 @@ class AdminController extends Controller
                     elseif($key == "twitterurl"){
                         $clientinfo->twitterurl = $value;
                     }
+                    elseif($key == "img"){
+                        $clientlogo->img = $value;
+                    }
 
                     elseif(substr($key, 0, 18) == "officer-name--none"){
                         $newofficer = new officer;
@@ -460,6 +466,7 @@ class AdminController extends Controller
 
             $client->save();
             $clientinfo->save();
+            $clientlogo->save();
             return redirect('/csoadmin/manageorgs/'.$clientid)->with('success',  $client->acronym.' info edited!');
         }
         return redirect('/csoadmin/manageorgs')->with('fail', 'Error! Client doesnnt exist!');
