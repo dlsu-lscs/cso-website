@@ -3,6 +3,163 @@
     --accent-jema: #005425;
 }
 
+#banner__org {
+    /* position: absolute; */
+    /* left: 0; */
+    position: relative;
+    font-size: 3.5em;
+    font-weight: 900;
+    color: var(--cso-white);
+    
+    padding: 80px 0;
+    width: 100%;    
+    height: 100%;
+    /* height: 500px; testing */
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* z-index: 2; */
+    
+}
+
+.banner__org-bg {
+    position: absolute;
+    
+    width: 100%;    
+    height: 100%;
+
+    -moz-filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='grayscale'><feColorMatrix type='matrix' values='0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0'/></filter></svg>#grayscale");
+    -o-filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='grayscale'><feColorMatrix type='matrix' values='0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0'/></filter></svg>#grayscale");
+    -webkit-filter: grayscale(100%);
+    filter: gray;
+    filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='grayscale'><feColorMatrix type='matrix' values='0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0'/></filter></svg>#grayscale");
+    
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#banner__org>* {
+    z-index: 1;
+}
+
+.banner__org-lbl {
+  position: absolute;
+  left: 0;
+  font-size: 3.5em;
+  font-weight: 900;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--cso-white);
+  z-index: 2;
+  max-width: 70%;
+  opacity: 0.15;
+
+  /* background: url(img/grp-photo__mes.jpg); */
+  -moz-filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='grayscale'><feColorMatrix type='matrix' values='0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0'/></filter></svg>#grayscale");
+  -o-filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='grayscale'><feColorMatrix type='matrix' values='0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0'/></filter></svg>#grayscale");
+  -webkit-filter: grayscale(100%);
+  filter: gray;
+  filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='grayscale'><feColorMatrix type='matrix' values='0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0'/></filter></svg>#grayscale");
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-clip-path: polygon(0 0, 58% 0, 100% 100%, 0% 100%);
+  clip-path: polygon(0 0, 58% 0, 100% 100%, 0% 100%);
+}
+
+.banner__org-name {
+    max-width: 70%;
+    text-align: center;
+}
+
+.banner__org-logo {
+  /* position: absolute; */
+  /* right: 0; */
+  /* height: 100%; */
+  /* max-width: 60%; */
+     background-color: white;
+    height: 300px;
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+.banner__org-bg:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  -moz-filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='grayscale'><feColorMatrix type='matrix' values='0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0'/></filter></svg>#grayscale");
+  -o-filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='grayscale'><feColorMatrix type='matrix' values='0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0'/></filter></svg>#grayscale");
+  -webkit-filter: grayscale(100%);
+  filter: white;
+  filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='grayscale'><feColorMatrix type='matrix' values='0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0'/></filter></svg>#grayscale");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+/* 
+.banner__org-logo:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  opacity: 0.15;
+} */
+
+.banner__org-logo img {
+  /* width: 50%;
+  z-index: 4;
+  max-height: 100%;
+  max-width: 100%; */
+
+      width: 100%;
+    z-index: 4;
+    max-height: 100%;
+    max-width: 100%;
+    padding: 30px;
+}
+
+.banner__org-lbl p {
+  z-index: 5;
+  padding: 0 200px 0 60px;
+}
+
+.banner__org-bg:after {
+  content: "\A";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.82) 5%,
+    rgba(0, 0, 0, 0.8) 25%,
+    rgba(0, 0, 0, 0.6) 45%,
+    rgba(0, 0, 0, 0.55) 100%
+  );
+  /* transition: all 0.5s;
+    -webkit-transition: all 0.5s; */
+}
+
+.banner__org-name span,
+.banner__org-lbl span {
+  font-weight: 300;
+}
+
+
 #about.about--jema {
     background-color: var(--accent-jema);
 }

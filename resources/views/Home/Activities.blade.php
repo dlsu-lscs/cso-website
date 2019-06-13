@@ -11,6 +11,8 @@
 <script>
     new WOW().init();
 </script>
+@include('Layouts.navbar', ['aboutnav'=>true])
+
 <div class = "content">
     <section id="banner" class="main-section banner--abt">
         <div class="section-content">
@@ -231,7 +233,4 @@
     <section id="footer"></section>
 
 </div>
-    <!-- NAVBAR -->
-    @include('Layouts.navbar', ['activitiesnav'=>true])
-    <!-- /NAVBAR -->
 @endsection

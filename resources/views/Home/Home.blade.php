@@ -17,6 +17,8 @@
 <script>
     new WOW().init();
 </script>
+@include('Layouts.navbar', ['aboutnav'=>true])
+
     <div class = "content">
         <!-- TOP SECTION -->
         {{-- <div class = "tempnav">
@@ -379,7 +381,6 @@
     </div>
     <!-- /CONTENT -->
     <!-- NAVBAR -->
-        @include('Layouts.navbar', ['homenav'=>true])
     <!-- /NAVBAR -->
 
     <script src="{{asset('js/extras/eventscarousel.js')}}"></script>

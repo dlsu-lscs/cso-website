@@ -20,25 +20,47 @@
 
 
 @section('content')
+@include('Layouts.navbar', ['homenav'=>true])
+
 <div class = "content">
-    <section id="banner" class="banner--org">
+    <section id="banner__org" class="banner--org">
+    @if ($orgphoto1)        
+        <div class="banner__org-bg" style = "background: url('{{$orgphoto1->img}}'); background-size: cover;"></div>
+    @else
+        <div class="banner__org-bg"></div>
+    @endif
+            <!-- <p>{{$client->name}} <span>({{$client->acronym}})</span></p> -->
+        <!-- </div> -->
+
+        <div class="banner__org-logo">
+        @if ($clientlogo)
+            <img src="{{$clientlogo->img}}" alt=""/>
+        @endif
+        </div> 
+        <div class="banner__org-lbl">        
+            <p>{{$client->name}} <span>({{$client->acronym}})</span></p>
+        </div>
+
+            <p class="banner__org-name">{{$client->name}} <span>({{$client->acronym}})</span></p>
         
-        @if ($orgphoto1)
+        
+        
+        <!-- @if ($orgphoto1)
         <div class="banner__org-lbl banner__org-jema__l" style = "background: url('{{$orgphoto1->img}}'); background-size: cover;">
         @else
             <div class="banner__org-lbl banner__org-jema__l">
-        @endif
+        @endif -->
             <!-- <p>
             Mechanical Engineering Society <span>(MES)</span>                
             </p> -->
-            <p style = "max-width:90%">{{$client->name}} <span>({{$client->acronym}})</span></p>
-        </div>
-        <div class="banner__org-logo banner__org-jema__r">
+            <!-- <p style = "max-width:90%">{{$client->name}} <span>({{$client->acronym}})</span></p>
+        </div> -->
+        <!-- <div class="banner__org-logo banner__org-jema__r">
 
             @if ($clientlogo)
                 <img src="{{$clientlogo->img}}" alt=""/>
             @endif
-        </div>
+        </div> -->
     </section>
     <!-- fix this block! no vh -->
     <section id="about" class="about--jema" style = "background-color: {{$clientinfo->color1}}">
@@ -108,6 +130,5 @@
     
 </div>
     <!-- NAVBAR -->
-    @include('Layouts.navbar', ['orgnav' => true])
     <!-- /NAVBAR -->
     @endsection

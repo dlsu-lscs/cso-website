@@ -6,6 +6,8 @@
 @endsection
 
 @section('content')
+@include('Layouts.navbar', ['orgnav' => true])
+<div class="content">
     <section id="banner" class="main-section banner--abt">
         <div class="section-content">
             <img class="section-content__left" src="{{asset('assets/csofiles/CSOfb/IMG_0878.jpg')}}" alt="">
@@ -29,20 +31,22 @@
     </section> -->
 
     @foreach ($clusters as $key => $cluster)
-        <section class = "clustersection">
-            <div class = "clustersection__title">{{$key}}</div>
-            @if ($key == 'ASO')
-                <div class = "clustersection__subtitle">College of Science Organizations</div>
-            @elseif($key == 'ASPIRE')
-                <div class = "clustersection__subtitle">College of Education and Special Interest and Socio-Civic Organizations</div>
-            @elseif($key == 'CAP 12')
-                <div class = "clustersection__subtitle">College of Liberal Arts Organizations</div>
-            @elseif($key == 'ENGAGE')
-                <div class = "clustersection__subtitle">College of Engineering and College of Computer Studies Organizations</div>
-            @else
-                <div class = "clustersection__subtitle">College of Business and School of Economics</div>
-            @endif
-
+        <section class = "clustersection main-section">
+            <div class="clustersection__info">
+                <div class = "clustersection__title">{{$key}}</div>
+                <!-- <div class="divider"></div> -->
+                @if ($key == 'ASO')
+                    <div class = "clustersection__subtitle">College of Science Organizations</div>
+                @elseif($key == 'ASPIRE')
+                    <div class = "clustersection__subtitle">College of Education and Special Interest and Socio-Civic Organizations</div>
+                @elseif($key == 'CAP 12')
+                    <div class = "clustersection__subtitle">College of Liberal Arts Organizations</div>
+                @elseif($key == 'ENGAGE')
+                    <div class = "clustersection__subtitle">College of Engineering and College of Computer Studies Organizations</div>
+                @else
+                    <div class = "clustersection__subtitle">College of Business and School of Economics</div>
+                @endif
+            </div>
         <div class = "clustersection__orgcontainer">
             @foreach ($cluster as $ckey => $item)
                 <a href = "organizations/{{$item['info']['id']}}"><div class = "clustersection__orgcard left"><img src = "{{$item['logos']['img']}}" alt = "" class = "clustersection__orgcard--img"></div></a>
@@ -51,8 +55,8 @@
 
         </section>
     @endforeach
+</div>
 <!-- NAVBAR -->
-@include('Layouts.navbar', ['orgnav' => true])
 <!-- /NAVBAR -->
         
 @endsection
