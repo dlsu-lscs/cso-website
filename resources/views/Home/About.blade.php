@@ -143,7 +143,7 @@
             </div>
             <div class="sec__desc">The CSO Executive Board is composed of the Chairperson, Executive Vice Chairperson for Internals, Executive Vice Chairperson for Externals, Executive Vice Chairperson for Finance, Executive Vice Chairperson for Activity and Documentations. As the Executive Board of 44th CSO, we commit to uphold our legacy which is to produce leaders who lead with passion and serve with a purpose. Together as one CSO, we will continue to show the heart of CSO through our service to the organizations.</span></div>
             <div id="ebpb">
-                <div class="ebpb__leader">
+                <div id="ebpb__leader--pos-5" class="ebpb__leader">
                     <div class="ebpb__leader__photo">
                         <img src="{{asset('assets/csofiles/CSO EB Pictures/EVC ACTIVITIES AND DOCUMENTATIONS - FELICCI LARA.JPG')}}" alt=""/>
                     </div>
@@ -152,7 +152,7 @@
                         <div class="ebpb__leader__desc__title">Executive Vice Chairperson for Finance</div>
                     </div>
                 </div>
-                <div class="ebpb__leader">
+                <div id="ebpb__leader--pos-2" class="ebpb__leader">
                     <div class="ebpb__leader__photo">
                         <img src="{{asset('assets/csofiles/CSO EB Pictures/EVC INTERNALS - ELISA DY.JPG')}}" alt=""/>
                     </div>
@@ -161,7 +161,7 @@
                         <div class="ebpb__leader__desc__title">Executive Vice Chairperson for Internals</div>
                     </div>
                 </div>
-                <div class="ebpb__leader">
+                <div id="ebpb__leader--pos-1" class="ebpb__leader">
                     <div class="ebpb__leader__photo">
                         <img src="{{asset('assets/csofiles/CSO EB Pictures/COUNCIL CHAIRPERSON - JASHIA CHUA .JPG')}}" alt=""/>
                     </div>
@@ -170,7 +170,7 @@
                         <div class="ebpb__leader__desc__title">Council Chairperson</div>
                     </div>
                 </div>
-                <div class="ebpb__leader">
+                <div id="ebpb__leader--pos-3" class="ebpb__leader">
                     <div class="ebpb__leader__photo">
                         <img src="{{asset('assets/csofiles/CSO EB Pictures/EVC EXTERNALS - MHARJORIE SANDEL.JPG')}}" alt=""/>
                     </div>
@@ -179,7 +179,7 @@
                         <div class="ebpb__leader__desc__title">Executive Vice Chairperson for Externals</div>
                     </div>
                 </div>
-                <div class="ebpb__leader">
+                <div id="ebpb__leader--pos-4" class="ebpb__leader">
                     <div class="ebpb__leader__photo">
                         <img src="{{asset('assets/csofiles/CSO EB Pictures/EVC FINANCE - NICOLLE MADRID.JPG')}}" alt=""/>
                     </div>
