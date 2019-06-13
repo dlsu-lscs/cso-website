@@ -27,6 +27,8 @@ Route::get('/', 'PageController@index');
 Route::get('organizations', 'PageController@organizations');
 Route::get('organizations/{id}', 'PageController@orgpage');
 Route::get('aboutus', 'PageController@about');
+Route::get('contact', 'PageController@contact');
+Route::post('contact', 'PageController@email');
 Route::get('csoadmin', 'AdminController@index');
 // Route::get('csoadmin/login', 'AdminController@login');
 Route::get('csoadmin/viewblogs', 'AdminController@viewblogs');

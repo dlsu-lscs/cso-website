@@ -26,26 +26,31 @@
     (object) array(
        'position' => 'Chairperson',
        'name' => 'Jashia Chua',
+       'img' => '/photos/shares/1 (2).PNG',
     ),
     'internals' => 
     (object) array(
        'position' => 'Executive Vice Chairperson for Internals',
        'name' => 'Elisa Dy',
+       'img' => NULL,
     ),
     'externals' => 
     (object) array(
        'position' => 'Executive Vice Chairperson for Externals',
        'name' => 'Mharjorie Sandel',
+       'img' => NULL,
     ),
     'finance' => 
     (object) array(
        'position' => 'Vice Chairperson for Finance',
        'name' => 'Armina Lara',
+       'img' => NULL,
     ),
     'activities' => 
     (object) array(
        'position' => 'Vice Chairperson for Activities',
        'name' => 'Nicolle Madrid',
+       'img' => NULL,
     ),
   ),
   'teams' => 

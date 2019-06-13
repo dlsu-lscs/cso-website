@@ -100,8 +100,15 @@
                     @foreach ($eb as $key=>$officer)
                         <div class = "form-group">
                             {{ Form::label('eb['.$key.']', $officer->position)}}
+                            <div id = "img-uploader" onclick = "uploadThumbnail()" onmouseover="uploadImageHover()" onmouseout="uploadImageRemove()">
+                                <div id = "img-uploader__snack"> Upload Thumbnail </div>
+                                {{ Form::text('ebimg['.$key.']', $officer->img,['class' => 'shadow-text', 'placeholder'=> 'Thumbnail', 'id'=> 'invi-img'])}}
+                            </div>
                             {{ Form::text('eb['.$key.']', $officer->name,['class' => 'input-text', 'placeholder'=> $officer->position])}}
                         </div>
+                        {{-- <div class = "form-group uploadform">
+                            
+                        </div> --}}
                     @endforeach
                     <br><hr><br>
 
@@ -139,7 +146,22 @@
     </div>
     
     <script>
+        var lfm = function(options, cb) {
 
+        var route_prefix = (options && options.prefix) ? options.prefix : '/laravel-filemanager';
+
+        window.open(route_prefix + '?type=' + options.type || 'file', 'FileManager', 'width=900,height=600');
+        window.SetUrl = cb;
+        }
+
+        function uploadThumbnail(){
+            lfm({type: 'image'}, function(url, path) {
+                var uploader = document.getElementById("img-uploader");
+                uploader.style.backgroundImage = "url("+path+")";
+                var inputter = document.getElementById("invi-img");
+                inputter.value = path;
+            });
+        }
     </script>
     
 @endsection

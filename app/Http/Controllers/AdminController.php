@@ -350,6 +350,9 @@ class AdminController extends Controller
         foreach($request->input('eb') as $key => $name) {
             $config['eb'][$key]->name = $name;
         }
+        foreach($request->input('ebimg') as $key => $name) {
+            $config['eb'][$key]->img = $name;
+        }
         $tmp = array();
         foreach($request->input('teams.*') as $key=>$team) {
             $tmp[$key] = (object) array(

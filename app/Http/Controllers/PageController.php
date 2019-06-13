@@ -9,6 +9,7 @@ use App\clientinfo;
 use App\clientlogos;
 use App\orgphotos;
 use App\officer;
+use Mail;
 
 class PageController extends Controller
 {
@@ -81,5 +82,29 @@ class PageController extends Controller
     public function about(){
         return view('Home.About');
     }
-    //
+    
+    public function contact() {
+        return view('Home.Contact');
+    }
+
+    public function email(Request $request) {
+        $this->validate($request, [ 'name' => 'required', 'email' => 'required|email', 'subject' => 'required', 'message' => 'required' ]);
+        $email = "krizialynn@gmail.com"; // TO email, most likely cso officers
+        $cc = array($request->get('email'));
+        $bcc = "krizia_chiu@dlsu.edu.ph";
+        $type = $request->get('type') ?: "";
+        $subject = $request->get('subject') ?: "";
+        date_default_timezone_set("Asia/Manila");
+        $data = array('type' => $type,"name" => $request->get('name'), "body" => $request->get('message'), 'email' => $request->get('email'), 'date' => date("Y-m-d H:i:s"));
+        $name = $request->get('name');
+        Mail::send('Home.Mail', $data, function ($message) use ($name, $email, $cc, $bcc, $type, $subject) {
+            $message->to($email)
+                    ->cc($cc)
+                    // ->bcc($bcc)
+                    ->subject('['.strtoupper($type).'] '.$subject);
+            $message->from('unknown.anony123@gmail.com','KKK');
+        });
+        return back()->with('success', 'Thanks for contacting us!'); 
+    }
+
 }
