@@ -7,6 +7,7 @@ use App\Blog; // Blog model uses namespace App;
 use App\client;
 use App\clusters;
 use App\clientinfo;
+use App\clientlogos;
 use App\officer;
 use Carbon\Carbon;
 class AdminController extends Controller
@@ -104,7 +105,7 @@ class AdminController extends Controller
                 $longago.="a few seconds";
             }
             $longago.=" ago.";
-            $blog->lonago = $longago;
+            $blog->longago = $longago;
 
         }
         return view('Admin.ViewBlogs')->with('blogs', $blogs);
@@ -346,4 +347,130 @@ class AdminController extends Controller
         return redirect('/csoadmin/makeofficers')->with('success', 'cluster info Created');
     }
 
+    public function manageorgs(Request $request){
+
+        $clusters = clusters::all();
+        $data = array();
+        $data['clusters'] = array();
+        $data['meaning'] = array();
+        foreach ($clusters as $cluster) {
+            $data['clusters'][$cluster->name] = array();
+            $data['meaning'][$cluster->name] = $cluster->meaning;
+            $clientinfos = clientinfo::where('cluster_id', $cluster->id)->get();
+            foreach ($clientinfos as $key => $clientinfo){
+                $client = client::where('id', $clientinfo->client_id)->first();
+                $clientlogo = clientlogos::where('client_id', $client->id)->first();
+                $data['clusters'][$cluster->name][$key] = array();
+                $data['clusters'][$cluster->name][$key]['info'] = $clientinfo;
+                $data['clusters'][$cluster->name][$key]['basic'] = $client;
+                $data['clusters'][$cluster->name][$key]['logos'] = $clientlogo;
+            }
+        }
+        // return view('Home.Orgs')->with($data);
+        return view('Admin.manageorgs')->with($data);
+    }
+
+    public function orgeditor($id){
+        $clientinfo = clientinfo::find($id);
+        if($clientinfo){
+            $data = array();
+            $data['clientinfo'] = $clientinfo;
+            
+            $client = client::where('id', $clientinfo->client_id)->first();
+            $data['client'] = $client;
+            $clientlogo = clientlogos::where('client_id', $clientinfo->client_id)->first();
+            $data['clientlogo'] = $clientlogo;
+            $officers = officer::where('client_id', $client->id)->get();
+            $data['officers'] = $officers;
+            return view('Admin.orgeditor')->with($data);
+        }
+        else{
+            return redirect('/csoadmin/manageorgs');
+        }
+    }
+    
+    public function handleorgeditor(Request $request){
+
+        $clientid = $request->input('cid');
+
+        $client = client::find($clientid);
+        $clientinfo = clientinfo::where('client_id', $clientid)->first();
+        $clientlogo = clientlogos::where('client_id', $clientid)->first();
+
+        $officers = officer::where('client_id', $client->id)->get();
+
+        foreach($officers as $officer){
+            if($request->input('officer-name--'.$officer->id)){
+                if($request->input('officer-name--'.$officer->id) != $officer->name || $request->input('officer-position--'.$officer->id) != $officer->position){
+                    $officer->name = input('officer-name--'.$officer->id);
+                    $officer->position = $request->input('officer-position--'.$officer->id);
+                    $officer->save();
+                }
+            }
+            else{
+                $officer->delete();
+            }
+        }
+
+        if($client){
+
+            foreach($request->input() as $key => $value){
+                if($value){
+                    if($key == "color1"){
+                        $clientinfo->color1 = $value;
+                    }
+                    elseif($key == "color2"){
+                        $clientinfo->color2 = $value;
+                    }
+                    elseif($key == "color3"){
+                        $clientinfo->color3 = $value;
+                    }
+                    elseif($key == "color4"){
+                        $clientinfo->color4 = $value;
+                    }
+                    elseif($key == "aboutus"){
+                        $clientinfo->aboutus = $value;
+                    }
+                    elseif($key == "vision"){
+                        $clientinfo->vision = $value;
+                    }
+                    elseif($key == "mission"){
+                        $clientinfo->mission = $value;
+                    }
+                    elseif($key == "weburl"){
+                        $clientinfo->weburl = $value;
+                    }
+                    elseif($key == "email"){
+                        $clientinfo->email = $value;
+                    }
+                    elseif($key == "fburl"){
+                        $clientinfo->fburl = $value;
+                    }
+                    elseif($key == "twitterurl"){
+                        $clientinfo->twitterurl = $value;
+                    }
+                    elseif($key == "img"){
+                        $clientlogo->img = $value;
+                    }
+
+                    elseif(substr($key, 0, 18) == "officer-name--none"){
+                        $newofficer = new officer;
+                        $inputkey = substr($key, 18);
+                        $newofficer->name = $value;
+                        $newofficer->position = $request->input("officer-position--none".$inputkey);
+                        $newofficer->client_id = $clientid;
+                        $newofficer->save();
+                    }
+                }
+            }
+
+            $client->save();
+            $clientinfo->save();
+            $clientlogo->save();
+            return redirect('/csoadmin/manageorgs/'.$clientid)->with('success',  $client->acronym.' info edited!');
+        }
+        return redirect('/csoadmin/manageorgs')->with('fail', 'Error! Client doesnnt exist!');
+    }
+    
+    
 }

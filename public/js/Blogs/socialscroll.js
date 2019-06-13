@@ -1,5 +1,6 @@
 window.addEventListener('scroll', ()=>{
-    if(window.scrollY >= 45){
+    console.log(window.scrollY);
+    if(window.scrollY >= 645){
         var elem = document.getElementsByClassName("socialcontent")[0];
         elem.classList.add("socialglue");
     }
@@ -11,7 +12,7 @@ window.addEventListener('scroll', ()=>{
     }
 })
 
-if(window.scrollY >= 35){
+if(window.scrollY >= 645){
     var elem = document.getElementsByClassName("socialcontent")[0];
     elem.classList.add("socialglue");
 }

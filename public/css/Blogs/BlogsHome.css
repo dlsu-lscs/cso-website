@@ -1,6 +1,17 @@
+.content{
+}
+
+.containerofblogs{
+    padding-top: 10px;
+    background: linear-gradient( 45deg, #e7e6ca 0%, #c7c482 100% );
+    padding-bottom: 100px;
+}
 .blogscontainer{
     max-width: 1200px;
+    height: 600px;
     margin: auto;
+    margin-top: 10px;
+    
 }
 
 
@@ -16,6 +27,7 @@
     position: absolute;
     width: 100%;
     height: 100%;
+    border-radius: 3px;
     background-color: rgba(0,0,0, 0.75);
 }
 
@@ -111,4 +123,147 @@
 .noblogscontainer--text{
     font-size: 65px;
     text-align: center;
+}
+
+.infinityblogs{
+    width: 100%;
+    /* height: 500px; */
+    background-color: var(--cso-green);
+    margin-bottom: 20px;
+    border-radius: 3px;
+}
+
+.blogmenu{
+    height: 35px;
+    overflow: hidden;
+    max-width: 1200px;
+    margin: auto;
+    /* background-color: red; */
+}
+
+.searchbar{
+    padding: 7px;
+    padding-left: 10px;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    font-size: 1.2em;
+    width: 350px;
+    height: 100%;
+    border: none;
+}
+
+.searchbutton{
+    height: 35px;
+    width: 60px;
+    cursor: pointer;
+    color: white;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background-color: var(--success-green);
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+.iblogsection{
+    width: 100%;
+}
+
+.iblogtitle{
+    width: 100%;
+
+    text-align: center;
+    color: var(--cso-gold);
+    font-size: 2.3em;
+    margin-top: 30px;
+    font-weight: bold;
+}
+
+.dividercontainer{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.divider{
+    height: 6px;
+    width: 105px;
+    background-color: var(--cso-gold);
+}
+
+.iblogcontainer{
+    max-width: 1200px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.iblog{
+    width: 100%;
+    height: 400px;
+    /* background-color: red; */
+    margin-top: 100px;
+    margin-bottom: 200px;
+}
+
+.--img{
+    width: 100%;
+    height: 100%;
+}
+.--iblog_container{
+    width:500px;
+    height: 100%;
+}
+
+.iblogcontent{
+    padding: 30px;
+    padding-left: 100px;
+    padding-right: 100px;
+    max-width: 700px;
+}
+
+.iblogcontent__title{
+    font-size: 1.4em;
+    color: var(--cso-white);
+    font-weight: bold;
+}
+
+.iblogcontent__body{
+    font-size: 0.9em;
+    color: var(--color-font);
+    margin-top: 10px;
+    margin-bottom: 25px;
+    text-align: justify;
+}
+
+.iblogcontent__readmore{
+    width: 140px;
+    height: 40px;
+    border: none;
+    background-color: var(--success-green);
+    border: 3px solid var(--font-active);
+    cursor: pointer;
+    transition: all 0.2s ease-in;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.iblogcontent__readmore:hover{
+    background-color: var(--cso-gold);
+}
+
+.shade{
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: #222222;
+}
+
+.shade__light{
+
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: var(--shadow-color);
 }

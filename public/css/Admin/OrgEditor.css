@@ -1,0 +1,139 @@
+.editor-container{
+    margin: 40px;
+    margin-top: 10px;
+}
+
+.--colorgroup{
+    margin-right: 22px;
+}
+
+.colortext{
+    padding:5px;
+}
+
+.block-container{
+    margin-top: 30px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0px 2px 6px var(--shadow-color);
+    padding: 15px;
+}
+
+.UpdateButton{
+    width: 140px;
+    height: 40px;
+    border: none;
+    background-color: #e0e0e081;
+    border: 3px solid var(--font-active);
+    cursor: pointer;
+    transition: all 0.2s ease-in;
+}
+
+.UpdateButton:hover{
+    background-color: #929292d5;
+}
+
+.officertext{
+    width: 350px;
+}
+
+.remove-officer{
+    width: 30px;
+    height: 30px;
+    background-color:#B22222;
+    border-radius: 30px;
+    margin-right: 18px;
+    margin-top: 16px;
+    color: var(--glass-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.add-officer{
+    width: 30px;
+    height: 30px;
+    background-color:#228B22;
+    border-radius: 30px;
+    margin-right: 18px;
+    margin-top: 16px;
+    color: var(--glass-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.officerformgroup{
+    overflow: hidden;
+    margin-bottom: 22px;
+    width: 100%;
+}
+
+.minuscontainer{
+    cursor: pointer;
+}
+
+.pluscontainer{
+    cursor: pointer;
+}
+
+.imageuploader{
+    width: 500px;
+    height: 300px;
+    background-color: red;
+}
+
+.img-uploader{
+    height: 250px;
+    width: 340px;
+    background-color: var(--color-white);
+    cursor: pointer;
+    position: relative;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    border: 3px solid var(--font-active);
+    
+}
+.img-uploader__snack{
+    height: 50px;
+    width: 100%;
+    position: absolute;
+    text-align: center;
+    background-color: var(--color-font);
+    color: var(--font-active);
+    line-height: 50px;
+    bottom: 0;
+    opacity: 0;
+    transition: all 0.3s;
+}
+
+.img-uploader__hovered{
+    opacity: 0.7 !important;
+}
+.shadow-text{
+    display: none;
+}
+
+.blogform{
+    max-width: var(--blog-width);
+}
+
+.divider{
+    background-color: var(--cso-green);
+    height: 6px;
+    width: 65px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.photocard{
+    background-color: var(--cso-white);
+    padding: 15px;
+    border-radius: 5px;
+    
+}
+
+.photocard .img-uploader{
+    height: 200px;
+    width: 200px;
+    text-align: center;
+}
