@@ -19,6 +19,66 @@
   box-sizing: border-box;
 }
 
+@media only screen and (max-width: 590px) {
+  section div.section-content img {
+    height: unset;
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  div.banner__center {
+    width: 100%;
+  }
+
+  section#events,
+  section.main-section {
+    padding: 70px 0;
+  }
+
+  section .section-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  section .section-content > * {
+    width: unset;
+    margin: 20px;
+  }
+
+  section .section-content--pd .section__info {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .section__info .section__info__title {
+    max-width: 100%;
+    font-size: 2.2em;
+  }
+
+  section .section-content img {
+    border: 15px solid var(--cso-gold);
+    height: 50vh;
+    width: initial;
+  }
+
+  section .section-content--pd > *:nth-child(1) {
+    margin-bottom: 40px;
+    margin-right: 20px;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+  }
+
+  div.section__info__body {
+    margin: 20px 0;
+  }
+}
+
 #vid-wrapper {
   display: none;
 }
@@ -570,7 +630,7 @@
   z-index: 1;
 }
 
-.section-content__left {
+.section-content--pd > *:nth-child(1) {
   margin-right: 80px; /* remove on responsive */
 }
 
@@ -578,7 +638,7 @@
   position: relative;
 }
 
-.section-content__left.section-content__photo-square img {
+.section-content--pd.section-content__photo-square img {
   width: 70%;
   border: none;
 }
@@ -638,7 +698,8 @@
 }
 
 .section__info__title {
-  font-size: 2.8em;
+  font-size: 2.5em;
+  max-width: 90%;
   line-height: 1.3em;
   font-weight: 700;
   color: var(--color-dark-gray);
@@ -680,6 +741,11 @@
 #blogs {
   background-color: var(--cso-green);
 }
+
+/* FOR TESTING RESPONSIVE ONLY */
+/* #event-carousel {
+  display: none;
+} */
 
 #event-carousel:nth-child(1) {
   margin-bottom: 20px;
@@ -786,7 +852,7 @@
 #about-wrapper::before {
     z-index: -999;
   content: "";
-  background: url(../../assets/csofiles/Sample\ Photos/sample_bg.jpg);
+  background: url("../../assets/csofiles/Sample Photos/sample_bg.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   opacity: 0.1;
@@ -805,7 +871,7 @@
 
 #orgs-wrapper::before {
   content: "";
-  background: url(../../assets/csofiles/Sample\ Photos/sample-orgs-bg.jpg);
+  background: url("../../assets/csofiles/Sample\ Photos/sample-orgs-bg.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   /* opacity: 0.1; */

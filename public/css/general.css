@@ -178,6 +178,7 @@ body {
 }
 .content{
     width: 100%;
+    overflow-x: hidden;
     margin-top: var(--nav-size);
 }
 

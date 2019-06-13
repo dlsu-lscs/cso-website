@@ -82,8 +82,8 @@
         <!-- /TOP SECTION -->
         <!-- TO ABOUT -->
         <section id="about" class="main-section">
-            <div id="about-wrapper" class="section-content">
-                <div class="section__info section-content__left">
+            <div id="about-wrapper" class="section-content section-content--pd">
+                <div class="section__info">
                     <div class="section__info__title">Passionate leaders since 1974.</div>
                     <div class="divider"></div>
                     <div class="section__info__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
@@ -124,8 +124,8 @@
 
         <!-- ACTIVITIES SECTION -->
         <section id="events" class="main-section">
-            <div id="about-wrapper" class="section-content">
-                <div class="section-content__left section-content__photo-square">
+            <div id="about-wrapper" class="section-content section-content--pd">
+                <div class="section-content__photo-square">
                     <div></div>                    
                     <img src="{{asset('assets/csofiles/Sample Photos/sample-activities-side.jpg')}}" alt="">
                 </div>
@@ -334,9 +334,9 @@
         <!-- /BLOG SECTION -->
 
         <!-- FOOTER -->
-        <section id="footer">
+        <!-- <section id="footer"> -->
             <!--logo, social media shortcuts-->
-            <div class="f-socialmedia">
+            <!-- <div class="f-socialmedia">
                 <img src="{{asset('assets/CSO Logo.png')}}" alt="">
                 <div class="f-social-media">
                     <div><i class="fab fa-facebook-f"></i>dlsu.cso</div>
@@ -371,10 +371,10 @@
                         <li>Officers</li>
                     </ul>
                 </div>
-            </div>
+            </div> -->
             <!--navigation-->            
-            <div></div>
-        </section>
+            <!-- <div></div>
+        </section> -->
         <!-- /FOOTER -->
     </div>
     <!-- /CONTENT -->

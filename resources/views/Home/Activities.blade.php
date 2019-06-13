@@ -112,7 +112,7 @@
                     <div class="et__comm__cont">
                         <div id="et__comm--ugnayan" class="et__comm__photo">
                             <div class="et__comm__photo__logo">
-                                <img src="{{asset('assets/csofiles/CSO AA Logos and Pictures/UGNAYAN.jpg')}}" alt=""/>
+                                <img src="{{asset('assets/csofiles/CSO AA Logos and Pictures/UGNAYAN.png')}}" alt=""/>
                             </div>
                         </div>
                         <div class="et__comm__cont__title">Ugnayan</div>
@@ -138,7 +138,7 @@
                     <div class="et__comm__cont">
                         <div id="et__comm--leap" class="et__comm__photo">
                             <div class="et__comm__photo__logo">
-                                <img src="{{asset('assets/csofiles/CSO AA Logos and Pictures/LEAP.jpg')}}" alt=""/>
+                                <img src="{{asset('assets/csofiles/CSO AA Logos and Pictures/LEAP.png')}}" alt=""/>
                             </div>
                         </div>
                         <div class="et__comm__cont__title">Lasallian Enrichment Alternative Program</div>
