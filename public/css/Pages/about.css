@@ -193,6 +193,12 @@
   max-width: 1240px;
 }
 
+.main-section__row-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+}
+
 #banner {
   padding: 80px 0;
   position: relative;
@@ -299,6 +305,10 @@
   display: inline-block;
 }
 
+.divider.divider--white {
+  background-color: var(--cso-white);
+}
+
 .img-desc {
   display: flex;
   justify-content: center;
@@ -376,19 +386,20 @@
 
 
 #about {
-  padding: 140px 0;
+  /* padding: 140px 0; */
   background: var(--cso-green);
+  flex-direction: row;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 #about img {
-  width: 25%;
+  width: 40%;
 }
 
 .about__desc {
-  max-width: 38%;
+  max-width: 50%;
   padding-left: 50px;
   color: var(--cso-white);
 }
@@ -396,12 +407,12 @@
 .about__content > * {
   margin-bottom: 12px;
   line-height: 1.4em;
-  text-align: justify;
+  /* text-align: justify; */
 }
 
 .about__header {
-  text-transform: uppercase;
-  font-size: 2.2em;
+  /* text-transform: uppercase; */
+  font-size: 2em;
   font-weight: 700;
   margin-bottom: 26px;
 }
@@ -415,8 +426,13 @@
 }
 
 .pdb {
-  padding: 80px 0;
-  display: flex;
+  /* padding: 80px 0;
+  display: flex; */
+
+  padding: 50px 40px;
+    margin: 30px 0;
+    display: flex;
+    background-color: var(--cso-white);
 }
 
 .pdb > * {
@@ -428,10 +444,15 @@
 }
 
 .pdb__photo img {
-  max-width: 35vw;
+  max-width: 100%;
 }
 
 .pdb__desc {
+  width: 50%;
+}
+
+.pdb__photo {
+  width: 50%;
 }
 
 .pdb__desc > * {
@@ -448,7 +469,7 @@
 }
 
 .pdb__desc__body {
-  width: 30vw;
+  width: 100%;
 }
 
 .sec__header {
@@ -619,12 +640,27 @@
 }
 
 .et__comm {
-
+  justify-content: center;
+  align-items: center;
     padding: 35px;
     margin: 10px 10px 40px 10px;
   display: flex;
   text-align: center;
   background-color: var(--cso-white);
+}
+
+.et__comm__cont__memb > * {
+  width: 240px;
+}
+
+.et__comm__cont__memb ul {
+  margin-top: 20px;
+}
+
+.et__comm__cont {
+  display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .et__comm__cont__title {
@@ -637,14 +673,22 @@
   /* max-width: 20vw; */
 }
 
+div.et__comm__cont__title--lighter {
+  font-weight: 400;
+}
+
 .et__comm ul {
   list-style-type: none;
 }
 
 .et__comm__cont__memb__head {
     color: var(--cso-black);
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
     font-weight: 700;
+}
+
+.et__comm__cont__memb__name {
+  font-size: 1.2em;
 }
 
 .et__comm__cont__memb__title {

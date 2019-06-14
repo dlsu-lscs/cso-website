@@ -202,7 +202,9 @@
         <div class="et__sub">
                 <div class="et__comm">
                     <div class="et__comm__cont">
-                    <div class="et__comm__logo"><img src="{{asset('assets/Team Logos/Copy of AMT(Transparent).png')}}" alt=""/></div>
+                        <div class="et__comm__logo">
+                            <img src="{{asset('assets/Team Logos/Copy of AMT(Transparent).png')}}" alt=""/>
+                        </div>
                         <div class="et__comm__cont__title">Activity Monitoring Team (AMT)</div>
                         <div class="et__comm__cont__memb">
                             <div class="et__comm__cont__memb__head">

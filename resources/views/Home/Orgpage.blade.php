@@ -63,8 +63,8 @@
         </div> -->
     </section>
     <!-- fix this block! no vh -->
-    <section id="about" class="about--jema" style = "background-color: {{$clientinfo->color1}}">
-
+    <section id="about" class="main-section about--jema" style = "background-color: {{$clientinfo->color1}}">
+        <div class="main-section__row-wrapper">
         @if ($orgphoto1)
         <img class="about__org-photo" src="{{$orgphoto1->img}}" alt="">
         @else
@@ -75,13 +75,19 @@
             <div class="about__content">
                 {!!$clientinfo->aboutus!!}
             </div>
+            <div class="divider divider--white"></div>
         </div>
+    </div>
     </section>
-    <section id="vis-mis">
+    <section id="vis-mis" class="main-section">
         <div class="pdb">
             <div class="pdb__desc">
             <div class="pdb__desc__header jema-accent" style = "color: {{$clientinfo->color1}}">Vision</div>
-                <div class="pdb__desc__body">{!!$clientinfo->vision!!}</div>
+                <div class="pdb__desc__body">
+                    {!!$clientinfo->vision!!}
+                </div>
+            <div class="divider" style = "background-color: {{$clientinfo->color1}}"></div>            
+                
             </div>
             <div class="pdb__photo">
                 @if ($orgphoto1)
@@ -102,23 +108,23 @@
             <div class="pdb__desc">
                 <div class="pdb__desc__header jema-accent" style = "color: {{$clientinfo->color1}}">Mission</div>
                 <div class="pdb__desc__body">{!!$clientinfo->mission!!}</div>
+                <div class="divider" style = "background-color: {{$clientinfo->color1}}"></div>                        
             </div>
             
         </div>
     </section>
     
-    <section id="et">
+    <section id="et" class="main-section">
         <div class="sec__header">The <span class="jema-accent" style = "color: {{$clientinfo->color1}}">Executive Team</span></div>        
         <div class="et__sub">
             @foreach ($orgofficers as $orgofficer)
             <div class="et__comm">
                 <div class="et__comm__cont">
-                    <div class="et__comm__cont__title">{{$orgofficer->name}}</div>
                     <div class="et__comm__cont__memb">
-                        <p>
-                            {{$orgofficer->position}}<br>
-                            {{-- <i>Vice Chairperson</i> --}}
-                        </p>
+                        <div class="et__comm__cont__memb__head">
+                            <div class="et__comm__cont__memb__name et__comm__cont__title--lighter">{{$orgofficer->name}}</div>
+                            <div class="et__comm__cont__memb__title" style = "color: {{$clientinfo->color1}}">{{$orgofficer->position}}</div>
+                        </div>
                     </div>                        
                 </div>
             </div>

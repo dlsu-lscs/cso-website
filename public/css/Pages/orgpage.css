@@ -3,6 +3,61 @@
     --accent-jema: #005425;
 }
 
+@media only screen and (max-width: 800px) {
+    section#banner__org {
+        font-size: 2em;
+    }
+
+    .main-section__row-wrapper {
+        flex-direction: column;
+    }
+
+    #about div img {
+        height: 30vh;
+        margin: 20px;
+        width: unset;
+    }
+
+    section#banner__org div.banner__org-logo {
+        width: 250px;
+        height: 250px;
+    }
+
+    div.pdb__desc__header {
+        font-size: 1.5em;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    div div.about__desc {
+        padding-left: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 90%;
+    }
+
+    div.pdb {
+        flex-direction: column;
+        margin: 10px;
+    }
+
+    div .pdb div.pdb__desc {
+        width: 100%;
+        order: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px;
+        margin-right: 0;
+    }
+
+    div .pdb div.pdb__photo {
+        width: 100%;
+        margin-right: 0;
+    }
+}
+
 #banner__org {
     /* position: absolute; */
     /* left: 0; */
@@ -75,11 +130,12 @@
     text-align: center;
 }
 
-.banner__org-logo {
-  /* position: absolute; */
+#banner__org div.banner__org-logo {
+  position: relative;
   /* right: 0; */
   /* height: 100%; */
   /* max-width: 60%; */
+  z-index: 2;
      background-color: white;
     height: 300px;
     width: 300px;
