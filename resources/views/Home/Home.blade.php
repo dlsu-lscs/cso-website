@@ -4,6 +4,7 @@
     <title>Council of Student Organizations</title>
     <link rel="stylesheet" href="{{asset('css/Pages/home.css')}}">
     <link rel="stylesheet" href="{{asset('css/Pages/mediaqueries/home.css')}}">
+    <link rel="stylesheet" href="{{asset('css/Pages/mediaqueries/blogshow.css')}}">
     <link rel="stylesheet" href="{{asset('css/Extras/anim.css')}}">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <script src = "{{asset('js/extras/anim.js')}}"></script>
@@ -17,7 +18,7 @@
 <script>
     new WOW().init();
 </script>
-@include('Layouts.navbar', ['aboutnav'=>true])
+@include('Layouts.navbar', ['homenav'=>true])
 
     <div class = "content">
         <!-- TOP SECTION -->
@@ -33,9 +34,10 @@
             </div>
             <div id="banner-center" class="banner__center banner__center__bg">
                 <!-- set to autoplay w/ jquery on button click -->
-                <iframe id="vid-wrapper" width="100%" height="100%"
-                    src="https://www.youtube.com/embed/rTE9W8DW5GI?autoplay=1" allowfullscreen>
-                </iframe>
+                {{-- <iframe id="vid-wrapper" width="100%" height="100%"
+                    src="https://www.youtube.com/embed/vc91hZyy5jc?autoplay=1" allowfullscreen>
+                </iframe> --}}
+                <iframe id="vid-wrapper" src="https://drive.google.com/file/d/1KUCJ--LGTNlVvAQiQyV8MdHyObe0qWQw/preview" width="100%" height="100%" allowfullscreen></iframe>
                 <div class="banner-content">
                     <!-- <div class="banner__main-txt wow fadeInLeftBig">Council of Student Organizations</div> -->
                     <div class="banner__main-txt">Council of Student Organizations</div>
@@ -88,17 +90,17 @@
                 <div class="section__info">
                     <div class="section__info__title">Passionate leaders since 1974.</div>
                     <div class="divider"></div>
-                    <div class="section__info__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+                    <div class="section__info__body">Providing service to its accredited organizations by ensuring that the activities/projects/initiatives of these organizations are well prepared, documented, and executed. </div>
                     <a href = "/aboutus"><button class="button">Read More About CSO</button></a>        
                 </div>
-                <img src="{{asset('assets/csofiles/CSOfb/IMG_0878.jpg')}}" alt="">
+                <img src="{{asset('assets/CSOIMAGES_2019-20/cso-pictures_0.jpg')}}" alt="">
             </div>
         </section>
         <!-- ORG SECTION -->
         <!-- <div class = "a-section org-section">
             <div class = "default-title org-title">ORGANIZATIONS</div>
             <div class = "org-body">
-                @foreach ($clusters as $key => $cluster)
+                {{-- @foreach ($clusters as $key => $cluster)
 
                     <div class = "org-card">
                         @foreach ($cluster as $item)
@@ -106,7 +108,7 @@
                         @endforeach
                         <div class = "org-card__desc">{{$key}}</div>
                     </div>
-                @endforeach
+                @endforeach --}}
 
             </div>
 
@@ -117,24 +119,24 @@
                 <div class="section__solidbg section__solidbg--dg section__solidbg--center">
                     <div class="section__info__title section__info__title--alt ">A family of organizations.</div>
                     <div class="divider"></div>
-                    <div class="section__info__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
-                    <a href = "/aboutus"><button class="button button--white">See CSO-accredited Organizations</button></a>            
+                    <div class="section__info__body"><br>Diverse. Inclusive. Collaborative.<br></div>
+                    <a href = "/organizations"><button class="button button--white">See CSO-accredited Organizations</button></a>            
                 </div>
             </div>
         </section>
         <!-- /ORG SECTION -->
 
         <!-- ACTIVITIES SECTION -->
-        <section id="events" class="main-section">
+        <section id="events" class="main-section" style = "display: block;">
             <div id="about-wrapper" class="section-content section-content--pd">
                 <div class="section-content__photo-square">
-                    <div></div>                    
-                    <img src="{{asset('assets/csofiles/Sample Photos/sample-activities-side.jpg')}}" alt="">
+                    {{-- <div></div>                     --}}
+                    <img src="{{asset('assets/csofiles/Sample Photos/sample-activities-side.png')}}" alt="">
                 </div>
                 <div class="section__info">
                     <div class="section__info__title">Activities to serve the student body.</div>
                     <div class="divider"></div>
-                    <div class="section__info__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+                    <div class="section__info__body">CSO is a home for leaders and aspiring leaders. We develop and train people by giving them new opportunities and experiences through our various activities every year. As an organization, these activities are our contribution to your stay in the university.</div>
                     <a href = "/activities"><button class="button">More About CSO Activities</button></a>            
                 </div>
             </div>
@@ -147,16 +149,16 @@
                     </div>
                 </div>
                 <div class = "carousel-stage">
-                    <div class="carousel-items">
-                        <img src="{{asset('assets/csofiles/CSO AA Logos and Pictures/AGB.png')}}" alt="AGB">
-                        <img src="{{asset('assets/csofiles/CSO AA Logos and Pictures/ARW.png')}}" alt="ARW">
-                        <img src="{{asset('assets/csofiles/CSO AA Logos and Pictures/FLARE.png')}}" alt="FLARE">
-                        <img src="{{asset('assets/csofiles/CSO AA Logos and Pictures/FW.png')}}" alt="FW">
-                        <img src="{{asset('assets/csofiles/CSO AA Logos and Pictures/GCA.png')}}" alt="GCA">
-                        <img src="{{asset('assets/csofiles/CSO AA Logos and Pictures/LEA.png')}}" alt="LEA">
-                        <img src="{{asset('assets/csofiles/CSO AA Logos and Pictures/LEAP.jpg')}}" alt="LEAP">
-                        <img src="{{asset('assets/csofiles/CSO AA Logos and Pictures/TUKLAS.png')}}" alt="TUKLAS">
-                        <img src="{{asset('assets/csofiles/CSO AA Logos and Pictures/UGNAYAN.jpg')}}" alt="UGNAYAN">
+                    <div class="carousel-items" id = "carousel-items">
+                        <img src="{{asset('assets/csofiles/CSO AA Logos and Pictures/AGB.png')}}" alt="AGB" class = "slide">
+                        <img src="{{asset('assets/csofiles/CSO AA Logos and Pictures/ARW.png')}}" alt="ARW" class = "slide">
+                        <img src="{{asset('assets/csofiles/CSO AA Logos and Pictures/FLARE.png')}}" alt="FLARE" class = "slide">
+                        <img src="{{asset('assets/csofiles/CSO AA Logos and Pictures/FW.png')}}" alt="FW" class = "slide">
+                        <img src="{{asset('assets/csofiles/CSO AA Logos and Pictures/GCA.png')}}" alt="GCA" class = "slide">
+                        <img src="{{asset('assets/csofiles/CSO AA Logos and Pictures/LEA.png')}}" alt="LEA" class = "slide">
+                        <img src="{{asset('assets/csofiles/CSO AA Logos and Pictures/LEAP.jpg')}}" alt="LEAP" class = "slide">
+                        <img src="{{asset('assets/csofiles/CSO AA Logos and Pictures/TUKLAS.png')}}" alt="TUKLAS" class = "slide">
+                        <img src="{{asset('assets/csofiles/CSO AA Logos and Pictures/UGNAYAN.jpg')}}" alt="UGNAYAN" class = "slide">
                     </div>
                 </div>
                 <!-- <img src="{{asset('assets/csofiles/Sample Photos/sample-activities-side.jpg')}}" alt="">
@@ -290,12 +292,12 @@
                 <div class="section__info__title section__info__title--alt">The latest blogs.</div>
                 <div class="divider"></div>
                 <div class="article-wrapper">
-                        @foreach ($blogs as $blog)
-                            <div class="ap">
+                        @foreach ($blogs as $blog) 
+                        <div class="ap">
                                 <img  src="{{$blog->img}}" alt="">
-                                <div class="ap-title"><a href="">{{$blog->title}}</a></div>
+                                <div class="ap-title"><a href="/blogs/{{$blog->id}}">{{$blog->title}}</a></div>
                                 <div class="ap-timestamp">{{$blog->longago}}</div>
-                            </div>
+                        </div>
                         @endforeach
                     {{-- <div class="ap">
                         <img  src="{{asset('assets/csofiles/CSOfb/IMG_0878.jpg')}}" alt="">
@@ -323,9 +325,9 @@
                         <div class="ap-timestamp">Yesterday</div>
                     </div> --}}
                 </div>
-                <div class="ra">
+                <a href = '/blogs'><div class="ra">
                     <button class="button button--white">See all Blogs</button>                                
-                </div>
+                </div></a>
             </div>
         </section>
 
@@ -383,6 +385,7 @@
     <!-- NAVBAR -->
     <!-- /NAVBAR -->
 
-    <script src="{{asset('js/extras/eventscarousel.js')}}"></script>
+    {{-- <script src="{{asset('js/extras/eventscarousel.js')}}"></script> --}}
+
         
 @endsection

@@ -243,3 +243,14 @@
     background: url(img/grp-photo__mes01.jpg);
 }
 
+.about__content{
+    text-align: justify;
+}
+
+.pdb__desc__body{
+    text-align: justify;
+}
+
+.pdb__desc{
+    text-align: justify;
+}

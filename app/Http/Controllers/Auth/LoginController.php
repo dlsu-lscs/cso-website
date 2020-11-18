@@ -28,7 +28,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/csoadmin';
+    protected $redirectTo = '/csoadmin/blogs';
     protected $loginPath = '/csoadmin/login';
 
     /**
@@ -45,6 +45,7 @@ class LoginController extends Controller
     {
         return view('Admin.Login');
     }
+    
     public function logout(Request $request) {
         Auth::logout();
         return redirect('csoadmin/login');

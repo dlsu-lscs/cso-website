@@ -7,19 +7,6 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
 
-
-## Install dependencies
-```bash
-composer require "laravelcollective/html":"^5.4.0"
-composer require unisharp/laravel-ckeditor
-php artisan vendor:publish --tag=ckeditor
-composer require unisharp/laravel-filemanager:dev-master
-php artisan vendor:publish --tag=lfm_config
-php artisan vendor:publish --tag=lfm_public
-php artisan route:clear
-php artisan config:clear
-php artisan storage:link
-```
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as:

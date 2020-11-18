@@ -10,12 +10,12 @@
 <div class="content">
     <section id="banner" class="main-section banner--abt">
         <div class="section-content">
-            <img class="section-content__left" src="{{asset('assets/csofiles/CSOfb/IMG_0878.jpg')}}" alt="">
+            <img class="section-content__left" src="{{asset('assets/csofiles/Sample Photos/sample-orgs-bg.png')}}" alt="">
             <div class="section__info">
                 <div class="section__info__subtitle">Organizations</div>
-                <div class="section__info__title">A tagline about how CSO is home to many organizations.</div>
+                <div class="section__info__title">Diverse. Inclusive. Collaborative.</div>
                 <div class="section__info__body-container">
-                    <p>Providing service to its accredited organizations by ensuring that the activities/projects/initiatives of these organizations are well prepared, documented, and executed.</p>
+                    <p>A Family of CSO-accredited organizations</p>
                     <div class="divider"></div>
                 </div>
             </div>

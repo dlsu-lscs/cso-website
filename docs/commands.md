@@ -72,18 +72,3 @@ users:
 php artisan make:auth
 
 ```
-
-
-INSTALLATION COMMANDS
-```bash
-composer require unisharp/laravel-filemanager:dev-master
-php artisan vendor:publish --tag=lfm_config
-php artisan vendor:publish --tag=lfm_public
-php artisan route:clear
-php artisan config:clear
-php artisan storage:link
-composer require "laravelcollective/html":"^5.4.0"
-composer require unisharp/laravel-ckeditor
-php artisan vendor:publish --tag=ckeditor
-
-```

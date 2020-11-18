@@ -1,5 +1,5 @@
 <div class = "snack-container">
-@if(count($errors) > 0)
+{{-- @if (count($errors) > 0)
     @foreach ($errors->all() as $error)
         <div class = "snack error" id ="snack{{$loop->index}}" onclick="closesnack({{$loop->index}})">
             <div class = "snack-close">
@@ -10,7 +10,7 @@
             </div>
         </div>
     @endforeach
-@endif
+@endif --}}
 
 @if (session('success'))
     <div class = "snack success" id="snacksuccess" onclick="closesnack('success')">

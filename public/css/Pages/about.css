@@ -211,10 +211,6 @@
   justify-content: center;
 }
 
-.banner--abt {
-  background-image: url("../../assets/csofiles/CSO Pictures/IMG_0868.jpg");
-}
-
 .banner--abt:after {
   content: "\A";
   position: absolute;
@@ -340,7 +336,6 @@
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
-  background-image: url("../../assets/csofiles/CSOfb/IMG_0878.jpg");  
 }
 
 .desc {
@@ -530,7 +525,7 @@
 }
 
 .cv__cv__label {
-  color: black;
+  color: var(--cso-green);
   text-transform: uppercase;
   font-size: 1.2em;
   font-weight: 700;

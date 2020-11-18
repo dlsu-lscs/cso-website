@@ -2,6 +2,7 @@
 @section('header')
     <title>{{$blog->title}} | Council of Student Organizations</title>
     <link rel="stylesheet" href="{{asset('css/Blogs/BlogShow.css')}}">
+    <link rel="stylesheet" href="{{asset('css/Pages/mediaqueries/blogshow.css')}}">
 
     <script src="{{asset('js/Blogs/socialscroll.js')}}"></script>
     <meta property="og:title"         content="{{$blog->title}}" />
@@ -36,6 +37,8 @@
             share_twitter(location.href);
         }
     </script>
+
+    @include('Layouts.navbar', ['blognav' => true])
     <div class = "content">
             <div class = "socialcontent">
                     SHARE
@@ -51,33 +54,34 @@
                 </div>
         <div class = "thumbnail-container">
 
-            <div class = "titlecontainer left">
-                <div class = "titlecontainer__inner">
-                    <div class = "titlecontainer__title">{{$blog->title}}</div><br>
-                    <div class = "dividercontainer"><div class = "divider"></div></div>
-                    <div class = "titlecontainer__subtitle"><br>
-                        by {{$blog->author}}<br>
-                        Published {{date("F", mktime(0, 0, 0, $blog->updated_at->month, 1))}} {{$blog->updated_at->day}}, {{$blog->updated_at->year}} 
-                        @if($blog->updated_at->hour != 12)
-                            {{$blog->updated_at->hour%12}}:{{$blog->updated_at->minute}}
-                        @else
-                            12:{{$blog->updated_at->minute}}
-                        @endif
-                        @if($blog->updated_at->hour >= 12)
-                        p.m.
-                        @else
-                            a.m.
-                        @endif
-                    </div>
-                </div>
-
-            </div>
+            
             <div class = "imagecontainer right" style = "background-image: url('{{$blog->img}}');">
 
             </div>
         </div>
         
         <div class = "blogcontainer">
+                <div class = "titlecontainer">
+                    <div class = "titlecontainer__inner">
+                        <div class = "titlecontainer__title">{{$blog->title}}</div><br>
+                        <div class = "dividercontainer"><div class = "divider"></div></div>
+                        <div class = "titlecontainer__subtitle"><br>
+                            by {{$blog->author}}<br>
+                            Published {{date("F", mktime(0, 0, 0, $blog->updated_at->month, 1))}} {{$blog->updated_at->day}}, {{$blog->updated_at->year}} 
+                            @if($blog->updated_at->hour != 12)
+                                {{$blog->updated_at->hour%12}}:{{$blog->updated_at->minute}}
+                            @else
+                                12:{{$blog->updated_at->minute}}
+                            @endif
+                            @if($blog->updated_at->hour >= 12)
+                            p.m.
+                            @else
+                                a.m.
+                            @endif
+                        </div>
+                    </div>
+    
+                </div>
             {{-- <div class = "socialcontent">
                 SHARE
                 <a href="http://www.facebook.com/share.php?u=google.com" onclick="return fbs_click()" target="_blank">
@@ -111,7 +115,7 @@
                 <div class = "blogcontainer__header left">By: <b>{{$blog->author}}</b></div>
             </div><br>
             <div class = thumbnailimg style = "background-image: url('{{$blog->img}}');"></div> --}}
-            <div>
+            <div class = "contentbody">
                 {!!$blog->body!!}
             </div>
             
@@ -142,5 +146,4 @@
             
         </div>
     </div>
-    @include('Layouts.navbar', ['blognav' => true])
 @endsection
