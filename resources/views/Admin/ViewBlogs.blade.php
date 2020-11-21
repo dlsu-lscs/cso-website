@@ -14,7 +14,7 @@
         <h1 style = "margin-left: 5px;"> Choose a blog to edit </h1>
         @if(count($blogs) > 0)
             @foreach ($blogs as $blog)
-                <a href = "/csoadmin/editblog/{{$blog->id}}">
+                <a href = "/csoadmin/blogs/{{$blog->id}}/edit">
                     <div class = "blogbox --left" style = "background-image: url({{$blog->img}})">
                         <div class = "blogbox__editcontainer"><i class="fa fa-pencil"></i> </div>
                         <div class = "blogbox__header">

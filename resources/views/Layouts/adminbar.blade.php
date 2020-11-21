@@ -8,19 +8,33 @@
                 <div class = "admin-side-item">
             @show
                 <i class="fas fa-edit"></i> 
-                <a href = "/csoadmin"><span class = "admin-text-item"> Create Blog</span></a>
+                <a href = "/csoadmin/blogs/create"><span class = "admin-text-item"> Create Blog</span></a>
             </div>
             @section('EditBlogSection')
                 <div class = "admin-side-item">
             @show
                 <i class="fa fa-pencil"></i> 
-                <a href = "/csoadmin/viewblogs"><span class = "admin-text-item"> Edit Blog</span></a>
+                <a href = "/csoadmin/blogs"><span class = "admin-text-item"> Edit Blog</span></a>
             </div>
             @section('ManageOrgSection')
                 <div class = "admin-side-item">
             @show
                 <i class="fa fa-group"></i> 
                 <a href = "/csoadmin/manageorgs"><span class = "admin-text-item"> Manage Orgs</span></a>
+            </div>
+            
+            @section('AddOrgSection')
+                <div class = "admin-side-item">
+            @show
+                <i class="fas fa-edit"></i> 
+                <a href = "/csoadmin/org/add"><span class = "admin-text-item"> Add Org</span></a>
+            </div>
+
+            @section('EditMainInfoSection')
+                <div class = "admin-side-item">
+            @show
+                <i class="fas fa-edit"></i> 
+                <a href = "/csoadmin/editmaininfo"><span class = "admin-text-item"> Edit CSO Info</span></a>
             </div>
             {{-- @section('DraftSection')
                 <div class = "admin-side-item">
@@ -35,17 +49,33 @@
                     <span class = "admin-text-item"> Trash</span>
             </div> --}}
         </div>
-        <div class = "admin-group">
+        {{-- *Upload Media* --}}
+        {{-- <div class = "admin-group">
             <div class = "admin-group-title">Media</div>
             <div class = "admin-side-item">
                 <i class="fa fa-file-image-o"></i> 
                 <span class = "admin-text-item"> Upload Media</span>
-            </div>
+            </div> --}}
             {{-- <div class = "admin-side-item">
                 <i class="fa fa-archive"></i> 
                 <span class = "admin-text-item"> Archive</span>
             </div> --}}
-        </div>
+        {{-- </div> --}}
+        {{-- <div class = "admin-group">
+            <div class = "admin-group-title">Downloads</div>
+            @section('CreateDownloadSection')
+            <div class = "admin-side-item">
+            @show
+                <i class="fa fa-file-image-o"></i> 
+                <a href = "/csoadmin/download"><span class = "admin-text-item"> Upload File</span></a>
+            </div>
+            @section('DeleteDownloadSection')
+            <div class = "admin-side-item">
+            @show
+                <i class="fa fa-file-image-o"></i> 
+                <a href = "/csoadmin/download/delete"><span class = "admin-text-item"> Delete File</span></a>
+            </div>
+        </div> --}}
     </div>
     
 </div>

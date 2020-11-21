@@ -4,14 +4,17 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class clusters extends Model
-{
-    //
-    protected $table = 'clusters';
+class clusters extends Model {
 
+    // Table Name
+    protected $table = 'clusters';
+    // Primary Key
     protected $primaryKey = 'id';
-    public function clientinfos()
-    {
+    // Timestamp
+    public $timestamps = false;
+
+    // Relationships
+    public function clientinfos() {
         return $this->hasMany('App\clientinfo');
     }
 }

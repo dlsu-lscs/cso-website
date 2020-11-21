@@ -11,7 +11,7 @@
     @endsection
     <div class = "admin-container">
         <div class = "blogform">
-            {!! Form::open(['action' => 'AdminController@handleupdateinfo', 'method' => 'POST' ]) !!}
+            {!! Form::open(['action' => 'AdminOrgController@update', 'method' => 'PATCH' ]) !!}
                 <select name = "client">
                     @foreach ($clients as $key=>$client)
                         <option value="{{$client->id}}">{{$key+1}}.) {{$client->name}}</option>

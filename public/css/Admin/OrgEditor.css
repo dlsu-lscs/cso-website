@@ -137,3 +137,13 @@
     width: 200px;
     text-align: center;
 }
+
+.input-team-name {
+    width: 80%;
+    /* display: inline; */
+}
+
+.input-team-alias {
+    width: 10%;
+    /* display: inline; */
+}

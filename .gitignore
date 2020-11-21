@@ -1,15 +1,2 @@
-/node_modules
-/public/hot
-/public/storage
-/storage/*.key
-/vendor
-/.idea
-/.vagrant
-Homestead.json
-Homestead.yaml
-npm-debug.log
-yarn-error.log
-.env
-/public/vendor
-public/vendor
-public/assets/csofiles/CSO_1.mp4
+# ENV file
+*.env

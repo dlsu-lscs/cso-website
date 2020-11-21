@@ -33,19 +33,20 @@
 }
 body {
     background-color: var(--color-bg-global);
-    font-family: var(--font), 'sans-serif';
+    font-family: "Open Sans", Arial, Helvetica, sans-serif;
     color: var(--color-font);
 }
 
 
 .nav-bar{
     /* position: absolute; */
+    position: relative;
     top: 0;
     background-color: var(--color-white);
     /* background-color: rgba(255,255,255,0); */
     /* background-color: var(--cso-green); */
     width: 100%;
-    /* box-shadow: 0px 1px 2px var(--shadow-color); */
+    box-shadow: 0px 2px 2px var(--font-active);
     z-index: 1000 !important;
     font-size: 0.8em;
     transition: all 0.2s ease-in;
@@ -110,7 +111,7 @@ body {
     margin: auto;
     position: relative;
     max-width: 1250px;
-    height: var(--nav-bar-size);
+    min-height: var(--nav-bar-size);
 }
 .nav-items-wrapper{
     max-width: 1200px;
@@ -118,8 +119,8 @@ body {
     height: 100%;
     align-items: center;
 
-    padding-left: 15px;
-    padding-right: 15px;
+    /* padding-left: 15px; */
+    /* padding-right: 15px; */
     /* display: flex; */
 }
 
@@ -131,7 +132,7 @@ body {
     /* margin: auto; */
     position: relative;
     align-items: center;
-    height: 100%;
+    height: var(--nav-bar-size);
 }
 
 .nav-items--right{
@@ -147,7 +148,7 @@ body {
     padding-right: 25.5px;
     text-align: center;
     transition: all 0.4s;
-    font-size: 1.1em;
+    font-size: 1.3em;
     /* color: var(--cso-white); */
     color: var(--color-font);
     display: flex;
@@ -255,6 +256,11 @@ a{
     padding: 10px;
 }
 
+.input-textarea{
+    width: 100%;
+    padding: 10px;
+}
+
 .button{
     width: 100px;
     height: 30px;
@@ -308,6 +314,71 @@ a{
     color: var(--cso-gold);
 }
 
+.burgercontainer{
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.burgermenu{
+    display: inline-block;
+
+}
+
+.bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: var(--color-font);
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+.change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+    transform: rotate(-45deg) translate(-9px, 6px);
+  }
+  
+.change .bar2 {opacity: 0;}
+
+.change .bar3 {
+-webkit-transform: rotate(45deg) translate(-8px, -8px);
+transform: rotate(45deg) translate(-8px, -8px);
+}
+
+.burgercontaineractive{
+    display: flex;
+}
+
+.fullnavmenu{
+    float: left;
+    height: 100%;
+    /* width: 1250px; */
+}
+
+.navmenu{
+    z-index: 9999;
+    position: absolute;
+    right: 0;   
+}
+
+.--item{
+    position: relative;
+    transition: all 0.2 ease-in;
+}
+
+.nav-selected:after {
+    content: '';
+    position: absolute;
+    border-bottom: 4px solid var(--cso-gold);
+    width: 100%;
+    left: 0;
+    /* padding: 0; */
+    /* transform: translateY(-50%); */
+    bottom: 15px;
+    /* left: 50%; */
+  }
+
+
 .footer{
     width: 100%;
     background-color: #222222;
@@ -317,21 +388,21 @@ a{
 
 .footer-col{
     width: 50%;
-    height: 400px;
+    min-height: 400px;
     padding: 30px;
 }
 
 .footer-container{
-    height: 400px;
+    min-height: 400px;
     max-width: 1250px;
     margin: auto;
+    overflow: hidden;
 }
 
 .footer-title{
     display: flex;
-    font-size: 2em;
+    font-size: 1.4em;
     height: 150px;
-    width: 360px;
     justify-content: center;
     align-items: center;
     margin-left: 10px;
@@ -349,4 +420,50 @@ a{
     display: flex;
     align-items: center;
     color: var(--color-font);
+}
+
+.footerwrapper{
+    width: 50%;
+}
+
+.footer *{
+    color: var(--color-font);
+}
+.footerinfocontainer{
+    width: 100%;
+}
+
+.--media{
+    font-size: 2.3em;
+    color: white;
+    cursor: pointer;
+    margin-right: 15px;
+}
+
+.mediacontainer{
+    margin-top: 15px;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+.fixcontainer{
+    overflow: hidden;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    padding-left: 50px;
+    border-left: 0.5px dashed white;
+    border-right: 0.5px dashed white;
+}
+
+.quicklink{
+    height: 35px;
+}
+
+.footerlinks{
+    
+}
+
+.slide{
+    width: 200px;
 }

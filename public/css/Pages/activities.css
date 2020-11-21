@@ -578,6 +578,16 @@
     background-image: url("../../assets/csofiles/Sample Photos/sample-act-leap-01.jpg");      
   }
 
+  #et__com--flare.et__comm__photo{
+    background-image: url("../../assets/csofiles/Sample Photos/sample-act-flare.png");      
+  }
+
+  #et__com--tuklas.et__comm__photo{
+    background-image: url("../../assets/csofiles/Sample Photos/sample-act-tuk.png");      
+  }
+  #et__com--lea.et__comm__photo{
+    background-image: url("../../assets/csofiles/Sample Photos/sample-act-lea.png");      
+  }
   .et__comm__photo__logo {
     padding: 2px;
     border-radius: 50%;
@@ -645,6 +655,7 @@
   
   .et__comm__cont__memb {
     margin-top: 10px;    
+    text-align: justify;
   }
   .et__comm__cont__memb__head {
       color: var(--cso-black);

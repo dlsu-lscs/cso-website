@@ -21,3 +21,10 @@
 //         elem.classList.remove("glued");
 //     }
 // }
+
+function clickactive(elem){
+    elem.classList.toggle("change");
+    elem.parentElement.parentElement.classList.toggle("isActive")
+    
+    console.log();
+}

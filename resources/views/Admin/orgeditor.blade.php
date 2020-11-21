@@ -17,7 +17,7 @@
 
             <div class = "blogform">
                 
-                {!! Form::open(['action' => 'AdminController@handleorgeditor', 'method' => 'POST' ]) !!}
+                {!! Form::open(['action' => 'AdminOrgController@update', 'method' => 'PATCH' ]) !!}
                     {{-- <select name = "client">
                         @foreach ($clients as $key=>$client)
                             <option value="{{$client->id}}">{{$key+1}}.) {{$client->name}}</option>
@@ -30,14 +30,11 @@
                         <h2>({{$client->acronym}})</h2><br>
                         </div>
                         <div class = "right">
-                            <div class = "imageuploader img-uploader" onclick = "uploadThumbnail(this, 'logoimg')" onmouseover="oe_uploadImageHover('logosnack')" onmouseout="oe_uploadImageRemove('logosnack')" style = "background-image: url('{{$clientlogo->img}}');">
-                                    <div class = "img-uploader__snack" id = "logosnack"> Upload Thumbnail </div>
-                                    {{ Form::text('img', $clientlogo->img,['class' => 'shadow-text invi-img', 'placeholder'=> 'Thumbnail', 'id'=> 'logoimg'])}}
-            
+                            <div class = "imageuploader img-uploader" onclick = "uploadThumbnail(this, 'logoimg')" onmouseover="oe_uploadImageHover('logosnack')" onmouseout="oe_uploadImageRemove('logosnack')" style = "background-image: url('{{ $clientlogo->img ?? '' }}');">
+                                <div class = "img-uploader__snack" id = "logosnack"> Upload Thumbnail </div>
+                                {{ Form::text('img', $clientlogo->img ?? '', ['class' => 'shadow-text invi-img', 'placeholder'=> 'Thumbnail', 'id'=> 'logoimg'])}} 
                             </div>
-            
                         </div>
-                        
                         <div class = "block-container left" style = "overflow: hidden; margin: 5px;">
                             <h2>General</h2>
                             <div class = "divider"></div>
@@ -57,34 +54,32 @@
                         <div class = "divider" style = "background-color: var(--cso-gold);"></div>
                         <div class = "form-group left --colorgroup photocard">
                             <div style = "width: 100%; text-align: center;">General Photo</div>
-                            <div class = "img-uploader"  class = "generalphoto-uploader" onclick = "uploadThumbnail(this, 'generalimg')" onmouseover="oe_uploadImageHover('generalphotosnack')" onmouseout="oe_uploadImageRemove('generalphotosnack')" style = "background-image: url('{{$clientlogo->img}}');">
+                                <div class = "img-uploader"  class = "generalphoto-uploader" onclick = "uploadThumbnail(this, 'generalimg')" onmouseover="oe_uploadImageHover('generalphotosnack')" onmouseout="oe_uploadImageRemove('generalphotosnack')" style = "background-image: url('{{ $generalphoto ?? ($clientlogo->img ?? '') }}');">
                                     <div class = "img-uploader__snack" id = "generalphotosnack"> Upload General Photo </div>
-                                    {{ Form::text('generalphoto', $clientlogo->img,['class' => 'shadow-text invi-img', 'placeholder'=> 'Thumbnail', 'id'=> 'generalimg'])}}
-            
-                            </div>
+                                    <!-- $var ?? '' -> means $var or '' -->
+                                    {{ Form::text('generalphoto', $generalphoto ?? '', ['class' => 'shadow-text invi-img', 'placeholder'=> 'Thumbnail', 'id'=> 'generalimg'])}}
+                                </div>
                         </div>
                         <div class = "form-group left --colorgroup photocard">
                             <div style = "width: 100%; text-align: center;">About Photo</div>
-                            <div class = "img-uploader"  class = "generalphoto-uploader" onclick = "uploadThumbnail(this, 'aboutimg')" onmouseover="oe_uploadImageHover('aboutphotosnack')" onmouseout="oe_uploadImageRemove('aboutphotosnack')" style = "background-image: url('{{$clientlogo->img}}');">
+                                <div class = "img-uploader"  class = "generalphoto-uploader" onclick = "uploadThumbnail(this, 'aboutimg')" onmouseover="oe_uploadImageHover('aboutphotosnack')" onmouseout="oe_uploadImageRemove('aboutphotosnack')" style = "background-image: url('{{ $aboutphoto ?? ($clientlogo->img ?? '') }}');">
                                     <div class = "img-uploader__snack" id = "aboutphotosnack"> Upload About Photo </div>
-                                    {{ Form::text('aboutphoto', $clientlogo->img,['class' => 'shadow-text invi-img', 'placeholder'=> 'Thumbnail', 'id'=> 'aboutimg'])}}
-            
+                                    {{ Form::text('aboutphoto', $aboutphoto ?? '', ['class' => 'shadow-text invi-img', 'placeholder'=> 'Thumbnail', 'id'=> 'aboutimg'])}}
+                                </div>
                             </div>
-                        </div>
                         <div class = "form-group left --colorgroup photocard">
                             <div style = "width: 100%; text-align: center;">Vision Photo</div>
-                            <div class = "img-uploader"  class = "generalphoto-uploader" onclick = "uploadThumbnail(this, 'visionimg')" onmouseover="oe_uploadImageHover('visionphotosnack')" onmouseout="oe_uploadImageRemove('visionphotosnack')" style = "background-image: url('{{$clientlogo->img}}');">
+                                <div class = "img-uploader"  class = "generalphoto-uploader" onclick = "uploadThumbnail(this, 'visionimg')" onmouseover="oe_uploadImageHover('visionphotosnack')" onmouseout="oe_uploadImageRemove('visionphotosnack')" style = "background-image: url('{{ $visionphoto ?? ($clientlogo->img ?? '') }}');">
                                     <div class = "img-uploader__snack" id = "visionphotosnack"> Upload Vision Photo </div>
-                                    {{ Form::text('visionphoto', $clientlogo->img,['class' => 'shadow-text invi-img', 'placeholder'=> 'Thumbnail', 'id'=> 'visionimg'])}}
-            
-                            </div>
+                                    {{ Form::text('visionphoto', $visionphoto ?? '', ['class' => 'shadow-text invi-img', 'placeholder'=> 'Thumbnail', 'id'=> 'visionimg'])}}
+                                </div>
                         </div>
                         <div class = "form-group left --colorgroup photocard">
                             <div style = "width: 100%; text-align: center;">Mission Photo</div>
-                            <div class = "img-uploader"  class = "generalphoto-uploader" onclick = "uploadThumbnail(this, 'missionimg')" onmouseover="oe_uploadImageHover('missionphotosnack')" onmouseout="oe_uploadImageRemove('missionphotosnack')" style = "background-image: url('{{$clientlogo->img}}');">
+                                <div class = "img-uploader"  class = "generalphoto-uploader" onclick = "uploadThumbnail(this, 'missionimg')" onmouseover="oe_uploadImageHover('missionphotosnack')" onmouseout="oe_uploadImageRemove('missionphotosnack')" style = "background-image: url('{{ $missionphoto ?? ($clientlogo->img ?? '') }}');">
                                     <div class = "img-uploader__snack" id = "missionphotosnack"> Upload Mission Photo </div>
-                                    {{ Form::text('missionphoto', $clientlogo->img,['class' => 'shadow-text invi-img', 'placeholder'=> 'Thumbnail', 'id'=> 'missionimg'])}}
-            
+                                    {{ Form::text('missionphoto', $missionphoto ?? '' , ['class' => 'shadow-text invi-img', 'placeholder'=> 'Thumbnail', 'id'=> 'missionimg'])}}
+                                </div>
                             </div>
                         </div>
                     </div>

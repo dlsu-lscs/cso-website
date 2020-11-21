@@ -10,10 +10,9 @@
     <style>
 
         .banner__org-jema__r:before {
-
-            @if ($orgphoto1)
-            background: url('{{$orgphoto1->img}}');
-            @endif
+            @isset ($generalphoto)
+            background: url('{{$generalphoto}}');
+            @endisset
         }
     </style>
 @endsection
@@ -24,18 +23,12 @@
 
 <div class = "content">
     <section id="banner__org" class="banner--org">
-    @if ($orgphoto1)        
-        <div class="banner__org-bg" style = "background: url('{{$orgphoto1->img}}'); background-size: cover;"></div>
-    @else
-        <div class="banner__org-bg"></div>
-    @endif
+    <div class="banner__org-bg" style = "background: url('{{$generalphoto or ''}}'); background-size: cover;"></div>
             <!-- <p>{{$client->name}} <span>({{$client->acronym}})</span></p> -->
         <!-- </div> -->
 
         <div class="banner__org-logo">
-        @if ($clientlogo)
-            <img src="{{$clientlogo->img}}" alt=""/>
-        @endif
+            <img src="{{$clientlogo->img or ''}}"/>
         </div> 
         <div class="banner__org-lbl">        
             <p>{{$client->name}} <span>({{$client->acronym}})</span></p>
@@ -45,11 +38,9 @@
         
         
         
-        <!-- @if ($orgphoto1)
-        <div class="banner__org-lbl banner__org-jema__l" style = "background: url('{{$orgphoto1->img}}'); background-size: cover;">
-        @else
-            <div class="banner__org-lbl banner__org-jema__l">
-        @endif -->
+        <!-- 
+        <div class="banner__org-lbl banner__org-jema__l" style = "background: url('{{$generalphoto or ''}}'); background-size: cover;">
+        -->
             <!-- <p>
             Mechanical Engineering Society <span>(MES)</span>                
             </p> -->
@@ -57,19 +48,15 @@
         </div> -->
         <!-- <div class="banner__org-logo banner__org-jema__r">
 
-            @if ($clientlogo)
-                <img src="{{$clientlogo->img}}" alt=""/>
-            @endif
+            @isset ($clientlogo)
+                <img src="{{$clientlogo}}"/>
+            @endisset
         </div> -->
     </section>
     <!-- fix this block! no vh -->
     <section id="about" class="main-section about--jema" style = "background-color: {{$clientinfo->color1}}">
         <div class="main-section__row-wrapper">
-        @if ($orgphoto1)
-        <img class="about__org-photo" src="{{$orgphoto1->img}}" alt="">
-        @else
-        <img class="about__org-photo" src="" alt="">
-        @endif
+            <img class="about__org-photo" src="{{$aboutphoto or ''}}">
         <div class="about__desc">
             <div class="about__header">About {{$client->acronym}}</span></div>
             <div class="about__content">
@@ -90,20 +77,12 @@
                 
             </div>
             <div class="pdb__photo">
-                @if ($orgphoto1)
-                <img class="about__org-photo" src="{{$orgphoto1->img}}" alt="">
-                @else
-                <img class="about__org-photo" src="" alt="">
-                @endif
+                <img class="about__org-photo" src="{{$visionphoto or ''}}">
             </div>
         </div>
         <div class="pdb">
             <div class="pdb__photo">
-                @if ($orgphoto1)
-                <img class="about__org-photo" src="{{$orgphoto1->img}}" alt="">
-                @else
-                <img class="about__org-photo" src="" alt="">
-                @endif             
+                <img class="about__org-photo" src="{{$missionphoto or ''}}">       
             </div>
             <div class="pdb__desc">
                 <div class="pdb__desc__header jema-accent" style = "color: {{$clientinfo->color1}}">Mission</div>

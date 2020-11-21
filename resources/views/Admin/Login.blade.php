@@ -26,7 +26,7 @@
                             <strong>{{ $errors->first('password') }}</strong>
                         </span>
                     @endif
-                    <input name = "password" type = "password" placeholder = "username" class = "logincontainer__form__input" required>
+                    <input name = "password" type = "password" placeholder = "password" class = "logincontainer__form__input" required>
                 </div>
                 <div class = "logincontainer__bottom">
                     <button type = "submit" class = "logincontainer__bottom__button"> Login </button>

@@ -4,15 +4,17 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class clientinfo extends Model
-{
-    //
-    protected $table = 'clientinfos';
+class clientinfo extends Model {
 
+    // Table Name
+    protected $table = 'clientinfos';
+    // Primary Key
     protected $primaryKey = 'id';
+    // Timestamp
     public $timestamps = false;
-    public function client()
-    {
+
+    // Relationships
+    public function client() {
         return $this->hasOne('App\client');
     }
 }

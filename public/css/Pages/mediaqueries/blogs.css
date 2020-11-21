@@ -1,0 +1,33 @@
+@media only screen and (max-width: 1000px) {
+    .iblog{
+        height: auto;
+        display: block;
+    }
+
+    .--iblog_container{
+        width: 100%;
+    }
+    
+    .iblogcontent{
+        margin-left: 0;
+        margin-right: 0;
+        max-width: none;
+        width: 100%;
+    }
+
+    .blogstitle{
+        width: 100%;
+        justify-content: center;
+    }
+
+    .form-horizontal{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 15px;
+    }
+    .searchbar{
+        width: 200px
+    }
+}

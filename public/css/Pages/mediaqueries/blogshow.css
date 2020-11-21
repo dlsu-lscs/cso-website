@@ -1,0 +1,25 @@
+@media only screen and (max-width: 500px) {
+    .blogcontainer{
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+@media only screen and (max-width: 1270px) {
+    .socialcontent{ 
+        margin: 0;
+        padding: 0;
+        text-align: left;
+    }
+
+    .socialcontent__button{
+        text-align: left;
+    }
+
+}
+
+@media only screen and (max-width: 900px) {
+    .socialcontent{
+        display: none;
+    }
+}

@@ -11,17 +11,17 @@
 <script>
     new WOW().init();
 </script>
-@include('Layouts.navbar', ['aboutnav'=>true])
+@include('Layouts.navbar', ['activitiesnav'=>true])
 
 <div class = "content">
     <section id="banner" class="main-section banner--abt">
         <div class="section-content">
-            <img class="section-content__left" src="{{asset('assets/csofiles/CSOfb/IMG_0878.jpg')}}" alt="">
+            <img class="section-content__left" src="{{asset('assets/csofiles/Sample Photos/sample-activities-side.png')}}" alt="">
             <div class="section__info">
-                <div class="section__info__subtitle">Activities</div>
-                <div class="section__info__title">A tagline that describe how CSO activities bring out the best in students.</div>
+                <div class="section__info__subtitle">Activities</div><br>
+                {{-- <div class="section__info__title">A tagline that describe how CSO activities bring out the best in students.</div> --}}
                 <div class="section__info__body-container">
-                    <p>Providing service to its accredited organizations by ensuring that the activities/projects/initiatives of these organizations are well prepared, documented, and executed.</p>
+                    <p>CSO is a home for leaders and aspiring leaders. We develop and train people by giving them new opportunities and experiences through our various activities every year. As an organization, these activities are our contribution to your stay in the university.</p>
                     <div class="divider"></div>
                 </div>
             </div>
@@ -164,7 +164,7 @@
                 </div>
                 <div class="et__comm">
                     <div class="et__comm__cont">
-                        <div class="et__comm__photo">
+                        <div class="et__comm__photo" id = "et__com--tuklas">
                             <div class="et__comm__photo__logo">
                                 <img src="{{asset('assets/csofiles/CSO AA Logos and Pictures/TUKLAS.png')}}" alt=""/>
                             </div>
@@ -212,7 +212,7 @@
                 </div>
                 <div class="et__comm">
                     <div class="et__comm__cont">
-                        <div class="et__comm__photo">
+                        <div class="et__comm__photo" id = "et__com--lea">
                             <div class="et__comm__photo__logo">
                                 <img src="{{asset('assets/csofiles/CSO AA Logos and Pictures/LEA.png')}}" alt=""/>
                             </div>
@@ -225,6 +225,33 @@
                             </p>
                         </div>
                         
+                    </div>
+                </div>
+
+                <div class="et__comm">
+                    <div class="et__comm__cont">
+                        <div class="et__comm__photo" id = "et__com--flare">
+                            <div class="et__comm__photo__logo">
+                                <img src="{{asset('assets/csofiles/CSO AA Logos and Pictures/FLARE.png')}}" alt=""/>
+                            </div>
+                        </div>
+                        <div class="et__comm__cont__title">Flare</div>
+                        <div class="divider--short"></div>
+                        <div class="et__comm__cont__memb">
+                            <p>
+                                    FLARE is a certification program of the Council of Student Organizations and the Office of Student LIFE (SLIFE) for all accredited and recognized student organizations and government units. It aims to equip student leaders with trainings and mentoring sessions on project development, management, monitoring, and evaluation. Further, FLARE will also implement a case competition that’ll enable student leaders to come up with sustainable project proposals on various social issues.
+                            </p>
+                        </div>
+                        <div class="et__comm__cont__detailsgroup">
+                            <div class="et__comm__cont__details">
+                                <p class="et__comm__cont__details__title">Target Participants</p>
+                                <p class="et__comm__cont__details__data">70</p>
+                            </div>
+                            <div class="et__comm__cont__details">
+                                <p class="et__comm__cont__details__title">Audience</p>
+                                <p class="et__comm__cont__details__data">USG and CSO student representatives</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
         </div>

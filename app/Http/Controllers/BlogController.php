@@ -1,78 +1,74 @@
 <?php
 
+/*
+    |--------------------------------------------------------------------------
+    | Blog Controller
+    |--------------------------------------------------------------------------
+    |
+    | Author:   Dalan, Gerald F.
+    | Description:
+    |   This controller handles the communication to the
+    | blogs db. Normal Users can only view blogs.
+    |
+    | Date/Ver: December 23, 2019 V 1.00
+    | Routes - Function
+    | *GET
+    |   /blogs - index
+    |   /blogs/create - create
+    |   /blogs/{blog} - show
+    |   /blogs/{blog}/edit - edit
+    | *POST
+    |   /blogs - store
+    | *PUT/PATCH
+    |   /blogs/{blog} - update
+    | *DELETE
+    |   /blogs/{blog} - destroy
+*/
+
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Blog; // Blog model uses namespace App;
-use App\client; // Blog model uses namespace App;
-use App\clientlogos; // Blog model uses namespace App;
-use Carbon\Carbon;
-// use DB;
+use Carbon\Carbon; // use DB;
 
-class BlogController extends Controller
-{
+class BlogController extends Controller {
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        //
-        // $blogs = Blog::all();
-        // $blogs = Blog::orderBy('title', 'asc')->get();
-        // $blogs = Blog::where('title', 'blog title')->get();
-        // $blogs = Blog::orderBy('title', 'asc')->take(1)->get();
-        // $blogs = DB::select('SELECT * FROM BLOGS');
-        // $blogs = Blog::orderBy('id', 'desc')->paginate(1);
-        $blogs = Blog::orderBy('id', 'desc')->get();
-        foreach ($blogs as $blog){
-            $longagoy = Carbon::now()->diffInYears($blog->updated_at);
-            $longagomo = Carbon::now()->diffInMonths($blog->updated_at);
-            $longagod = Carbon::now()->diffInDays($blog->updated_at);
-            $longagoh = Carbon::now()->diffInHours($blog->updated_at);
-            $longagom = Carbon::now()->diffInMinutes($blog->updated_at);
-            $longagos = Carbon::now()->diffInSeconds($blog->updated_at);
-            $longago = "Posted ";
-            $iss = "";
-            if($longagoy >= 1 ){
-                $longago.=$longagoy." year";
-                if($longagoy > 1){
-                    $longago = $longago."s";
-                }
-            }
-            elseif($longagomo >= 1 ){
-                $longago.=$longagomo." month";
-                if($longagomo > 1){
-                    $longago = $longago."s";
-                }
-            }
-            elseif($longagod >= 1 ){
-                $longago.=$longagod." day";
-                if($longagod > 1){
-                    $longago = $longago."s";
-                }
-            }
-            elseif($longagoh >= 1 ){
-                $longago.=$longagoh." hour";
-                if($longagoh > 1){
-                    $longago = $longago."s";
-                }
-            }
-            elseif($longagom >= 1 ){
-                $longago.=$longagom." minute";
-                if($longagom > 1){
-                    $longago = $longago."s";
-                }
-            }
-            else{
-                $longago.="a few seconds";
-            }
-            $longago.=" ago.";
-            $blog->longago = $longago;
+    public function index(Request $request) {
+        include(app_path() . '/Functions/BlogFunctions.php');
 
+        $data = array();
+
+        $data['search'] = "";
+        \Log::info('Entered');
+        $blogs = Blog::orderBy('id', 'desc')->take(5)->get();
+
+        if($request->input('search')){
+            $searchval = $request->input('search');
+            $data['search'] = $searchval;
+            $blogs = DB::table('blogs')
+                ->where('type_id', '=', 2)
+                ->where('body', 'like', '%'.$searchval.'%')
+                ->orWhere('title', 'like', '%'.$searchval.'%')
+                ->orWhere('author', 'like', '%'.$searchval.'%')
+                ->orderBy('id', 'desc')
+                ->take(5)
+                ->get();
+        } else {
+            $blogs = DB::table('blogs')
+                ->where('type_id', '=', 2)
+                ->orderBy('id', 'desc')
+                ->take(5)
+                ->get();
         }
-        return view('Blogs.Blogs')->with('blogs', $blogs);
+
+        $data['blogs'] = longAgo($blogs);
+        return view('Blogs.Blogs')->with($data);
     }
 
     /**
@@ -80,10 +76,8 @@ class BlogController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
+    public function create() {
         return view('Blogs.Create');
-        //
     }
 
     /**
@@ -92,8 +86,7 @@ class BlogController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
+    public function store(Request $request) {
         $this->validate($request, [
             'title' => 'required',
             'body' => 'required'
@@ -117,11 +110,9 @@ class BlogController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
+    public function show($id) {
         $blog = Blog::find($id);
         return view('Blogs.show')->with('blog', $blog);
-        //
     }
 
     /**
@@ -130,9 +121,8 @@ class BlogController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
-    {
-        //
+
+    public function edit($id) {
         $blog = Blog::find($id);
         return view('Blogs.edit')->with('blog', $blog);
     }
@@ -144,8 +134,8 @@ class BlogController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
+    public function update(Request $request, $id) {
+
         $this->validate($request, [
             'title' => 'required',
             'body' => 'required'
@@ -158,19 +148,5 @@ class BlogController extends Controller
         $blog->save();
 
         return redirect('/blogs')->with('success', 'Blog Updated');
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        $blog = Blog::find($id);
-        $blog->delete();
-        return redirect('/blogs')->with('success', 'Blog Deleted');
-        //
     }
 }
